@@ -1,0 +1,591 @@
+[
+    {
+        "id": "KPI:Max-Supply-Pressure-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the maximum supply pressure deviation in the AHU, takes as input a timeseries of supply pressure and supply pressure setpoints and outputs the maximum supply pressure deviation over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "SupPres": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Pressure-Supply",
+                "unit": "PAL"
+            },
+            "SupPresSetp": {
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Air-Pressure-Supply",
+                "unit": "PAL"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC000-V02",
+        "name": "Max Supply Pressure Deviation"
+    },
+    {
+        "id": "KPI:Energy-Use-Intensity",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt/killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI",
+        "periodicity": [
+            "@hourly",
+            "@weekly",
+            "@monthly",
+            "@yearly"
+        ],
+        "requires": {
+            "SpacialContext": {
+                "type": [
+                    "Building",
+                    "Zone",
+                    "Space"
+                ],
+                "area": true
+            },
+            "TotalLoad": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": [
+                    "Accumulated-Load",
+                    "Total-Load"
+                ],
+                "unit": [
+                    "KWH",
+                    "KWT"
+                ]
+            }
+        },
+        "taskId": "A01-K:00001-V01",
+        "name": "Energy Use Intensity"
+    },
+    {
+        "id": "KPI:Max-Supply-Temperature-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the max supply temperature deviation in the AHU, takes as input a timeseries of supply temperature and supply temperature setpoints and outputs the max supply temperature deviation over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "SupTemp": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Air-Supply",
+                "unit": "CEL"
+            },
+            "SupTempSetp": {
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Temperature-Air-Supply",
+                "unit": "CEL"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC000-V04",
+        "name": "Max Supply Temperature Deviation"
+    },
+    {
+        "id": "KPI:Electrical-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the electrical peak power in the AHU, takes as input a timeseries of electrical energy use and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Total-Load",
+                "unit": "KWT"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:BP100-V01",
+        "name": "Electrical Peak Power"
+    },
+    {
+        "id": "KPI:Cooling-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the cooling peak power in the AHU, takes as input a timeseries of electrical energy use for Cooling device and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Energy-Consumed-Heating-Coil",
+                "unit": "WHR"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:BP100-V03",
+        "name": "Cooling Peak Power"
+    },
+    {
+        "id": "KPI:Electricity_Use",
+        "type": "Task",
+        "description": "KPI definition for the heating energy use in the AHU, takes as input a timeseries of heating energy use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Energy-Consumed-Heating-Coil",
+                "unit": "WHR"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:EP200-V01",
+        "name": "Heating Energy Use"
+    },
+    {
+        "id": "KPI:Heating-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the heating peak power in the AHU, takes as input a timeseries of electrical energy use for heating device and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Energy-Consumed-Heating-Coil",
+                "unit": "WHR"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:BP100-V02",
+        "name": "Heating Peak Power"
+    },
+    {
+        "id": "KPI:Electricity-Use",
+        "type": "Task",
+        "description": "KPI definition for the electricity use in the AHU, takes as input a timeseries of electricity use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:EP100-V01",
+        "name": "Electricity Use"
+    },
+    {
+        "id": "KPI:Fan_Electricity_Use",
+        "type": "Task",
+        "description": "KPI definition for the electricity use for the fan, takes as input a timeseries of electricity use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Exhaust-Fan-Power",
+                "unit": "KWT"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:EP100-V02",
+        "name": "Fan Electricity Use"
+    },
+    {
+        "id": "KPI:Average-Supply-Pressure-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the average supply pressure deviation in the AHU, takes as input a timeseries of supply pressure and supply pressure setpoints and outputs the average supply pressure deviation over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "SupPres": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Pressure-Supply",
+                "unit": "PAL"
+            },
+            "SupPresSetp": {
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Air-Pressure-Supply",
+                "unit": "PAL"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC000-V01",
+        "name": "Average Supply Pressure Deviation"
+    },
+    {
+        "id": "KPI:Average-Supply-Temperature-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the average supply temperature deviation in the AHU, takes as input a timeseries of supply temperature and supply temperature setpoints and outputs the average supply temperature deviation over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "SupTemp": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Air-Supply",
+                "unit": "CEL"
+            },
+            "SupTempSetp": {
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Temperature-Air-Supply",
+                "unit": "CEL"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC000-V03",
+        "name": "Average Supply Temperature Deviation"
+    },
+    {
+        "id": "KPI:Specific-Heating-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the specific heating energy use for the AHU, takes as input a timeseries of supply air flow, extracion air flow, and electricity use to heat and outputs the specific electricity use over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "HeatEnergyUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "controlsProperty": "Energy-Consumed-Heating-Coil",
+                "unit": "WHR"
+            },
+            "SupFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Flow-Supply",
+                "unit": "MQH"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC500-V02",
+        "name": "Specific Heating Energy Use"
+    },
+    {
+        "id": "KPI:Water_Based_Heating_Energy_Use",
+        "type": "Task",
+        "description": "KPI definition for the specific heating energy use in the AHU, takes as input a timeseries of heating energy use and the flow rate over the heating coil and outputs the specific heating energy use over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Energy-Consumed-Heating-Coil",
+                "unit": "WHR"
+            },
+            "SupFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Supply-Fan-Flow",
+                "unit": "MQH"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC500-V05",
+        "name": "Water Based Heating Energy Use"
+    },
+    {
+        "id": "KPI:specific_electicity_use",
+        "type": "Task",
+        "description": "KPI definition for the specific electricity use for the AHU, takes as input a timeseries of supply air flow, extracion air flow, and electricity use and outputs the specific electricity use over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ElecUse": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Total-Load",
+                "unit": "KWH"
+            },
+            "ExtFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Flow-Extraction",
+                "unit": "MQH"
+            },
+            "SupFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Flow-Supply",
+                "unit": "MQH"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC500-V01",
+        "name": "Specific Electricity Use"
+    },
+    {
+        "id": "KPI:Specific_Fan_Power",
+        "type": "Task",
+        "description": "KPI definition for the specific fan power in the AHU, takes as input a timeseries of fan power and fan flow outputs the sum specific fan power over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ExtFanFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Exhaust-Fan-Flow",
+                "unit": "MQH"
+            },
+            "ExtFanPower": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Exhaust-Fan-Power",
+                "unit": "KWT"
+            },
+            "SupFanFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Supply-Fan-Flow",
+                "unit": "MQH"
+            },
+            "SupFanPower": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Supply-Fan-Power",
+                "unit": "KWT"
+            }
+        },
+        "arguments": {
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC500-V04",
+        "name": "Specific Fan Power"
+    },
+    {
+        "id": "KPI:Heat_Exchanger_Efficiency",
+        "type": "Task",
+        "description": "KPI definition for the heat exchanger efficiency in the rotary heat exchanger, takes as input a timeseries of supply and extraction flow and air temperature and outputs the the deviation between the real and theoratical possiple heat exchanger efficiency over the entire timeseries as a float",
+        "category": "KPI",
+        "requires": {
+            "ExtFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Exhaust-Fan-Flow",
+                "unit": "MQH"
+            },
+            "ExtTemp": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Extraction",
+                "unit": "CEL"
+            },
+            "SupFlow": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Supply-Fan-Flow",
+                "unit": "MQH"
+            },
+            "SupTemp": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Air-Supply",
+                "unit": "CEL"
+            },
+            "SupTempSP": {
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Temperature-Air-Supply",
+                "unit": "CEL"
+            },
+            "TempAfterHE": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-HE",
+                "unit": "CEL"
+            },
+            "TempIntake": {
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Intake",
+                "unit": "CEL"
+            }
+        },
+        "arguments": {
+            "c_p": 1.006,
+            "scope": {
+                "type": "enum",
+                "values": [
+                    "1 minute",
+                    "5 minutes",
+                    "15 minutes",
+                    "hourly",
+                    "daily",
+                    "weekly",
+                    "yearly"
+                ]
+            }
+        },
+        "taskId": "A28-K:SC130-V01",
+        "name": "Heat Exchanger Efficiency"
+    }
+]

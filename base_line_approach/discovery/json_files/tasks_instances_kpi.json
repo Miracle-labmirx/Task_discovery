@@ -1,0 +1,2650 @@
+[
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.354:KPI-Instance:Average-Temperature-Deviation",
+        "type": "Task",
+        "description": "Percentage of the of occupied hours (those during which the building is occupied), in which the operative temperature is outside a specified range, calculated according to the Fanger thermal comfort model.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "tempSensor": {
+                "id": "Aalborg-Office:Floor-4:Room-1.354:Sensor_Temperature",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T17:59:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-03-27T16:23:58Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "arguments": {
+            "above_thresh": 26,
+            "below_thresh": 20
+        },
+        "dateModified": "2024-09-24T19:01:09Z",
+        "taskId": "A11-K:01-V01",
+        "taskValue": 0.0,
+        "name": "Sensor measuring temperature in Room-1.354"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Atrium:KPI-Instance_Average-Temperature-Deviation",
+        "type": "Task",
+        "description": "Percentage of the of occupied hours (those during which the building is occupied), in which the operative temperature is outside a specified range, calculated according to the Fanger thermal comfort model.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "tempSensor": {
+                "id": "Lisbon-FCUL-Library:Atrium:VirtualSensor-Instance_Average-Temperature",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T14:59:59Z",
+        "validTo": "2024-10-01T16:00:00Z",
+        "dateCreated": "2024-06-10T11:14:24Z",
+        "dateObserved": "2024-10-01T15:00:00Z",
+        "arguments": {
+            "above_thresh": 25,
+            "below_thresh": 20
+        },
+        "dateModified": "2024-10-01T16:00:42Z",
+        "taskId": "A11-K:01-V01",
+        "taskValue": 0.0,
+        "name": "Hourly Average temperature deviation in Atrium zone of FCUL Library"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Cooling-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the cooling energy use in the AHU, takes as input a timeseries of cooling energy use and outputs the sum cooling energy use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-08-31T17:55:22Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:EP200-V02",
+        "taskValue": 0.0,
+        "name": "Cooling Energy Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Average-Supply-Pressure-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the average supply pressure deviation in the AHU, takes as input a timeseries of supply pressure and supply pressure setpoints and outputs the average supply pressure deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Pressure-Supply",
+                "unit": "PAL"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Air-Pressure-Supply",
+                "unit": "PAL"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-08-31T17:59:43Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC000-V01",
+        "taskValue": 43.71521767326522,
+        "name": "Average Supply Pressure Deviation"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-5:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-5:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-5:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:45Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 13.68
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-4:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-4:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-4:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:45Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 14.552448979591835
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-8:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-8:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-8:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:43Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 1.71
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-3:Room-1:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-3:Room-1:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-3:Room-1:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:45Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 8.375510204081632
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Self-Comsumption-of-Renewables:Yearly",
+        "type": "Task",
+        "description": "Measure the energy produced by the PV unit self-consumed locally, giving insight into the dimensioning of the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "ActiveEnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            },
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-10T14:14:02Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A35-K:SCR00-V01",
+        "taskValue": 0,
+        "name": "Self-Comsumption of Renewables"
+    },
+    {
+        "id": "Aspern-Office:PV:KPI-Instance_Local-Production-to-Grid:Daily",
+        "type": "Task",
+        "description": "Measure the energy locally produced by the PV unit injected in the grid",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "ActiveEnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-09T15:15:34Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A35-K:LPG00-V01",
+        "taskValue": 0,
+        "name": "Local Production to Grid"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-4:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-4:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-4:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:57Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 0.0
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-2:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-2:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-2:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:57Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 6.84
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-11:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-11:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-11:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:07Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 3.350204081632653
+    },
+    {
+        "id": "Aspern-Office:KPI-Instance_Energy-Produced-Income:Daily",
+        "type": "Task",
+        "description": "Measure the income of the energy produced locally from the PV injected into the grid (not self-consumed).",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "EletricityPrice": {
+                "id": "DayAheadPrices:Austria",
+                "type": "External"
+            },
+            "EnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T16:38:15Z",
+        "dateObserved": "2024-09-16T00:00:00Z",
+        "dateModified": "2024-09-17T00:01:13Z",
+        "taskId": "A35-K:I0000-V01",
+        "taskValue": 3015743.9792343755,
+        "name": "Income"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Daily",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "2024-09-23T00:00:00Z",
+        "validTo": "2024-09-24T00:00:00Z",
+        "dateCreated": "2023-11-15T23:13:12Z",
+        "dateObserved": "2024-09-23T00:00:00Z",
+        "dateModified": "2024-09-24T00:08:08Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0.27516666666666667,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_CO2-Emissions:Monthly",
+        "type": "Task",
+        "description": "Monthly KPI for the CO2 Emissions of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "CumulatedNaturalGasVolumeFlow": {
+                "id": "Milan-MultiApartment-2:Offline-Value_Cumulated-Natural-Gas-Volume-Flow",
+                "type": "External"
+            },
+            "NaturalGasCo2EmissionFactor": {
+                "id": "Milan:Reference-Value:Natural-Gas:CO2-Emission-Factor",
+                "type": "External"
+            }
+        },
+        "validFrom": "2023-12-01T00:00:00Z",
+        "validTo": "2024-01-01T00:00:00Z",
+        "dateCreated": "2024-09-07T10:22:41Z",
+        "dateObserved": "2023-12-01T00:00:00Z",
+        "dateModified": "2024-09-10T22:01:52Z",
+        "taskId": "A22-K:00006-V01",
+        "taskValue": 5721.698,
+        "name": "Monthly KPI for Boiler for CO2 Emissions"
+    },
+    {
+        "id": "Aspern-Office:KPI-Instance_Energy-Use-Intensity:Yearly",
+        "type": "Task",
+        "description": "Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aspern-Office",
+                "type": "Building"
+            },
+            "TotalLoad": {
+                "id": "Aspern-Office:Sensor_Energy-Consumption",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-18T15:47:32Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0,
+        "name": "Yearly Energy Use Intensity (EUI) for Aspern Office building"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-7:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-7:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-7:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:45Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 1.5355102040816326
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Heat-Exchanger-Efficiency",
+        "type": "Task",
+        "description": "KPI definition for the heat exchanger efficiency in the rotary heat exchanger, takes as input a timeseries of supply and extraction flow and air temperature and outputs the the deviation between the real and theoratical possiple heat exchanger efficiency over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ExtFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSP": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "TempAfterHE": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "TempIntake": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-25T18:59:54Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "c_p": 1006,
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC130-V01",
+        "taskValue": {
+            "Max": 8.903135575722963,
+            "current": 9.96888691374358,
+            "deviation": -1.0657513380206165
+        },
+        "name": "Heat Exchanger Efficiency"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-2:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-2:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:10Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.02040816326530612
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-2:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-2:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:15Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.8571428571428571
+    },
+    {
+        "id": "Aspern-Office:KPI-Instance_Energy-Use-Intensity:Daily",
+        "type": "Task",
+        "description": "Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aspern-Office",
+                "type": "Building"
+            },
+            "TotalLoad": {
+                "id": "Aspern-Office:Sensor_Energy-Consumption",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-30T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-07-18T15:47:56Z",
+        "dateObserved": "2024-09-30T00:00:00Z",
+        "dateModified": "2024-10-01T00:09:25Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0.07001116071428572,
+        "name": "Daily Energy Use Intensity (EUI) for Aspern Office building"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Atrium:KPI-Instance:Average-Temperature-Deviation",
+        "type": "Task",
+        "description": "Percentage of the of occupied hours (those during which the building is occupied), in which the operative temperature is outside a specified range, calculated according to the Fanger thermal comfort model.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "tempSensor": {
+                "id": "Lisbon-FCUL-Library:Atrium:VirtualSensor-Instance_Average-Temperature",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T14:59:59Z",
+        "validTo": "2024-10-01T16:00:00Z",
+        "dateCreated": "2024-04-09T22:49:06Z",
+        "dateObserved": "2024-10-01T15:00:00Z",
+        "arguments": {
+            "above_thresh": 25,
+            "below_thresh": 20
+        },
+        "dateModified": "2024-10-01T16:00:50Z",
+        "taskId": "A11-K:01-V01",
+        "taskValue": 0.0,
+        "name": "Hourly Average temperature deviation in Atrium zone of FCUL Library"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-7:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-7:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:11Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.5510204081632653
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Heating-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the heating peak power in the AHU, takes as input a timeseries of electrical energy use for heating device and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "HeatUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Power-Consumed-Heating-Coil",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-12T17:29:33Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:BP10-V02",
+        "taskValue": 0,
+        "name": "Heating Peak Power"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-3:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-3:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:18Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.08163265306122448
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Hourly",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2023-06-22T23:39:37Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:06:44Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0.007611111111111111,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Actual-Load",
+        "type": "Task",
+        "description": "KPI definition for the actual load of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CumulatedEnergy": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T16:15:00Z",
+        "validTo": "2024-10-01T16:30:00Z",
+        "dateCreated": "2024-08-26T14:22:46Z",
+        "dateObserved": "2024-10-01T16:15:00Z",
+        "dateModified": "2024-10-01T16:35:22Z",
+        "taskId": "A22-K:00002-V01",
+        "taskValue": 0.0,
+        "name": "Actual Load KPI for Boiler"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-1:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-1:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:09Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.40816326530612246
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Annual-Produced-Energy",
+        "type": "Task",
+        "description": "Measure the annual energy produced from the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-12T22:32:33Z",
+        "dateObserved": "2023-01-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:23:16Z",
+        "taskId": "A35-K:APE00-V01",
+        "taskValue": 16676572.168045044,
+        "name": "Annual Produced Energy"
+    },
+    {
+        "id": "Aspern-Office:PV:KPI-Instance_Local-Production-to-Grid:Yearly",
+        "type": "Task",
+        "description": "Measure the energy locally produced by the PV unit injected in the grid",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "ActiveEnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-09T15:21:50Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A35-K:LPG00-V01",
+        "taskValue": 0,
+        "name": "Local Production to Grid"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-8:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-8:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:06Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.0
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Costs:Monthly",
+        "type": "Task",
+        "description": "Monthly KPI for the natural gas energy costs of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "NaturalGasPrice": {
+                "id": "Milan:Reference-Value:Natural-Gas:Price",
+                "type": "External"
+            },
+            "PrimaryDeliveredEnergy": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Primary-Delivered-Energy:Monthly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-07T10:23:39Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00007-V01",
+        "taskValue": 0,
+        "name": "Monthly KPI Boiler Energy Costs"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Yearly",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-15T23:13:49Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:KPI-Instance:Average-Temperature-Deviation",
+        "type": "Task",
+        "description": "Percentage of the of occupied hours (those during which the building is occupied), in which the operative temperature is outside a specified range, calculated according to the Fanger thermal comfort model.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "tempSensor": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:VirtualSensor-Instance_Average-Temperature",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T14:59:59Z",
+        "validTo": "2024-10-01T16:00:00Z",
+        "dateCreated": "2024-04-09T23:07:32Z",
+        "dateObserved": "2024-10-01T15:00:00Z",
+        "arguments": {
+            "above_thresh": 25,
+            "below_thresh": 20
+        },
+        "dateModified": "2024-10-01T16:00:50Z",
+        "taskId": "A11-K:01-V01",
+        "taskValue": 0.0,
+        "name": "Hourly Average temperature deviation in Atrium zone of FCUL Library"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-6:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-6:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:02Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.47368421052631576
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-11:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-11:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:00Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.02040816326530612
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Costs:Yearly",
+        "type": "Task",
+        "description": "Yearly KPI for the natural gas energy costs of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "NaturalGasPrice": {
+                "id": "Milan:Reference-Value:Natural-Gas:Price",
+                "type": "External"
+            },
+            "PrimaryDeliveredEnergy": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Primary-Delivered-Energy:Yearly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-07T10:23:51Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00007-V01",
+        "taskValue": 0,
+        "name": "Yearly KPI Boiler Energy Costs"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Average-Supply-Temperature-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the average supply temperature deviation in the AHU, takes as input a timeseries of supply temperature and supply temperature setpoints and outputs the average supply temperature deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Supply-Fan-Flow",
+                "unit": "MQH"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Air-Supply",
+                "unit": "CEL"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Air-Pressure-Supply",
+                "unit": "CEL"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-15T15:18:59Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC000-V03",
+        "taskValue": 0,
+        "name": "Average Supply Temperature Deviation"
+    },
+    {
+        "id": "Aspern-Office:KPI-Instance_Energy-Use-Intensity:Monthly",
+        "type": "Task",
+        "description": "Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aspern-Office",
+                "type": "Building"
+            },
+            "TotalLoad": {
+                "id": "Aspern-Office:Sensor_Energy-Consumption",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-01T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-07-18T15:47:43Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:40Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 2.262924107142857,
+        "name": "Monthly Energy Use Intensity (EUI) for Aspern Office building"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:PV:KPI-Instance_Annual-Produced-Energy",
+        "type": "Task",
+        "description": "Measure the annual energy produced from the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Lisbon-FCUL-Library:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-12T22:32:29Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A35-K:APE00-V01",
+        "taskValue": 0,
+        "name": "Annual Produced Energy"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced",
+        "type": "Task",
+        "description": "KPI definition for the energy produced of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "ReturnFlowTemperature": {
+                "id": "Milan-MultiApartment:Boiler:Gas-Boiler:Sensor_Return-Temperature",
+                "type": "Device"
+            },
+            "SupplyFlowTemperature": {
+                "id": "Milan-MultiApartment:Boiler:Gas-Boiler:Sensor_Supply-Temperature",
+                "type": "Device"
+            },
+            "VolumeFlow": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:PS14:Sensor_Water-Flow-Rate",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T16:15:00Z",
+        "validTo": "2024-10-01T16:30:00Z",
+        "dateCreated": "2024-07-16T10:55:31Z",
+        "dateObserved": "2024-10-01T16:15:00Z",
+        "dateModified": "2024-10-01T16:30:19Z",
+        "taskId": "A22-K:00003-V01",
+        "taskValue": 0.1221150000000005,
+        "name": "Energy Produced by the Boiler"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-7:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-7:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-7:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:50Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 16.794642857142858
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-8:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-8:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-8:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:04Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 1.6402040816326529
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Efficiency-Factor:Monthly",
+        "type": "Task",
+        "description": "KPI definition for efficiency factor of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "EnergyProduced": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced:Monthly",
+                "type": "Task"
+            },
+            "PrimaryDeliveredEnergy": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Primary-Delivered-Energy",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-07T09:39:02Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00001-V01",
+        "taskValue": 0,
+        "name": "Monthly Boiler Efficiency Factor"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-10:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-10:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:09Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.46938775510204084
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-3:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-3:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:01:00Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.02040816326530612
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-3:Room-1:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-3:Room-1:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:58Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.04081632653061224
+    },
+    {
+        "id": "Lisbon-FCUL-Library:PV:KPI-Instance_Specific-Yield",
+        "type": "Task",
+        "description": "Measure how much energy (kWh) is produced for every kWp installed.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "InstalledPeakPower": {
+                "id": "Lisbon-FCUL-Library:Reference-Value:Installed-Peak-Power",
+                "type": "External"
+            },
+            "LocalEnergyProduction": {
+                "id": "Lisbon-FCUL-Library:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-11T18:38:26Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A35-K:SY000-V01",
+        "taskValue": 0,
+        "name": "Specific Yield"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-1:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-1:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:57Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.8979591836734694
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-1:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-1:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-1:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:57Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Heat-Exchanger-Efficiency",
+        "type": "Task",
+        "description": "KPI definition for the heat exchanger efficiency in the rotary heat exchanger, takes as input a timeseries of supply and extraction flow and air temperature and outputs the the deviation between the real and theoratical possiple heat exchanger efficiency over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "FlowExh": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "FlowSup": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "HCOpening": {
+                "id": "Aalborg-Office:HVAC:Actuator_Position-Heating-Coil-Motorvalve",
+                "type": "Device"
+            },
+            "HERotSignal": {
+                "id": "Aalborg-Office:HVAC:Sensor_Rotation-Speed",
+                "type": "Device"
+            },
+            "TempExh": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Temperature",
+                "type": "Device"
+            },
+            "TempExt": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "TempIntake": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "TempSup": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "TempSupSP": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-12T14:30:09Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "resample_time": "5 minutes",
+            "startup_time": "10 minutes",
+            "step_size_degrees": "2"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC130-V01",
+        "taskValue": 0,
+        "name": "Heat Exchanger Efficiency"
+    },
+    {
+        "id": "Aspern-Office:KPI-Instance_Energy-Produced-Income:Yearly",
+        "type": "Task",
+        "description": "Measure the income of the energy produced locally from the PV injected into the grid (not self-consumed).",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "EletricityPrice": {
+                "id": "DayAheadPrices:Austria",
+                "type": "External"
+            },
+            "EnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T16:38:46Z",
+        "dateObserved": "2023-01-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:12:15Z",
+        "taskId": "A35-K:I0000-V01",
+        "taskValue": 499638.8193823828,
+        "name": "Income"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Full-Load-Hours:Monthly",
+        "type": "Task",
+        "description": "Monthly KPI for the full load hours of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "ActualLoad": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Actual-Load",
+                "type": "Task"
+            },
+            "EnergyProduced": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-08-26T14:45:57Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00004-V01",
+        "taskValue": 0,
+        "name": "Monhtly KPI for Full Load Hours of Boiler"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:KPI-Instance_Total-Occupancy",
+        "type": "Task",
+        "description": "Total count for occupation estimation at Atrium Center zone.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "Estimates": [
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-2:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-3:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-4:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                }
+            ]
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-10T22:56:05Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "dateModified": "2024-07-22T15:19:07Z",
+        "taskId": "A13-K03-V01",
+        "taskValue": 14.552448979591835
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-10:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-10:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-10:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:18:56Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 1.2563265306122446
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-5:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-5:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:55Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.14285714285714285
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_CO2-Emissions:Yearly",
+        "type": "Task",
+        "description": "Yearly KPI for the CO2 Emissions of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "CumulatedNaturalGasVolumeFlow": {
+                "id": "Milan-MultiApartment-2:Offline-Value_Cumulated-Natural-Gas-Volume-Flow",
+                "type": "External"
+            },
+            "NaturalGasCo2EmissionFactor": {
+                "id": "Milan:Reference-Value:Natural-Gas:CO2-Emission-Factor",
+                "type": "External"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-07T10:22:51Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00006-V01",
+        "taskValue": 0,
+        "name": "Yearly KPI for Boiler for CO2 Emissions"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced:Monthly",
+        "type": "Task",
+        "description": "Monthly KPI for the energy produced of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "ReturnFlowTemperature": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:PS05:Sensor_Return-Temperature",
+                "type": "Device"
+            },
+            "SupplyFlowTemperature": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:PS14:Sensor_Supply-Temperature",
+                "type": "Device"
+            },
+            "VolumeFlow": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:PS05:Sensor_Water-Flow-Rate",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-05T15:49:10Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00003-V01",
+        "taskValue": 0,
+        "name": "Energy Produced by the Boiler"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-5:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-5:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:46Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.0
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Efficiency-Factor:Yearly",
+        "type": "Task",
+        "description": "Yearly KPI for efficiency factor of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "EnergyProduced": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced:Yearly",
+                "type": "Task"
+            },
+            "PrimaryDeliveredEnergy": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Primary-Delivered-Energy",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-07T09:39:22Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00001-V01",
+        "taskValue": 0,
+        "name": "Yearly Boiler Efficiency Factor"
+    },
+    {
+        "id": "Aspern-Office:PV:KPI-Instance_Local-Production-to-Grid:Monthly",
+        "type": "Task",
+        "description": "Measure the energy locally produced by the PV unit injected in the grid",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "ActiveEnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-09T15:19:23Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A35-K:LPG00-V01",
+        "taskValue": 0,
+        "name": "Local Production to Grid"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-8:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-8:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:50Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.061224489795918366
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Daily-Produced-Energy",
+        "type": "Task",
+        "description": "Measure the daily energy produced from the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T14:58:43Z",
+        "dateObserved": "2024-09-30T00:00:00Z",
+        "dateModified": "2024-10-01T00:09:14Z",
+        "taskId": "A35-K:APE00-V01",
+        "taskValue": 61662.75563812257,
+        "name": "Daily Produced Energy"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Monthly",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "2024-08-01T00:00:00Z",
+        "validTo": "2024-09-01T00:00:00Z",
+        "dateCreated": "2023-11-15T23:13:40Z",
+        "dateObserved": "2024-08-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:08:26Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 7.531888888888889,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Electricity-Use",
+        "type": "Task",
+        "description": "KPI definition for the electricity use in the AHU, takes as input a timeseries of electricity use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC_KOMF01:AHU_HT00-1_EM01:Sensor_Total-Load",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-12T17:48:28Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:EP100-V01",
+        "taskValue": 0.0,
+        "name": "Electricity Use"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-9:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-9:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:46Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.12244897959183673
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Self-Comsumption-of-Renewables:Daily",
+        "type": "Task",
+        "description": "Measure the energy produced by the PV unit self-consumed locally, giving insight into the dimensioning of the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "ActiveEnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            },
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-10T14:13:32Z",
+        "dateObserved": "2024-09-30T00:00:00Z",
+        "dateModified": "2024-10-01T00:09:19Z",
+        "taskId": "A35-K:SCR00-V01",
+        "taskValue": -34927899.82248688,
+        "name": "Self-Comsumption of Renewables"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-6:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-6:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:43Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.24489795918367346
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Full-Load-Hours:Yearly",
+        "type": "Task",
+        "description": "Yearly KPI for the full load hours of a boiler.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "ActualLoad": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Actual-Load",
+                "type": "Task"
+            },
+            "EnergyProduced": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Energy-Produced",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-08-26T14:46:14Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-K:00004-V01",
+        "taskValue": 0,
+        "name": "Yearly KPI for Full Load Hours of Boiler"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:KPI-Instance_Total-Occupancy",
+        "type": "Task",
+        "description": "Total count for occupation estimation.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "Estimates": [
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-3:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-1:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-1:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-3:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-11:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-9:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-10:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-7:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-7:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-8:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-8:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-5:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-5:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-6:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-6:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-2:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-2:Room-4:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-2:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-3:Room-1:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                },
+                {
+                    "id": "Lisbon-FCUL-Library:Floor-1:Room-4:KPI-Instance_Occupancy-Estimate",
+                    "type": "Task"
+                }
+            ]
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T23:05:12Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "dateModified": "2024-07-22T15:19:43Z",
+        "taskId": "A13-K03-V01",
+        "taskValue": 76.81913265306122
+    },
+    {
+        "id": "Lisbon-FCUL-Library:PV:KPI-Instance_Monthly-Produced-Energy",
+        "type": "Task",
+        "description": "Measure the monthly energy produced from the PV unit",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Lisbon-FCUL-Library:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T15:03:59Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:35Z",
+        "taskId": "A35-K:APE00-V01",
+        "taskValue": 0.0,
+        "name": "Monthly Produced Energy"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-9:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-9:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-9:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:50Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 11.411632653061224
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-4:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-4:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:39Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.14285714285714285
+    },
+    {
+        "id": "Aspern-Office:KPI-Instance_Energy-Produced-Income:Monthly",
+        "type": "Task",
+        "description": "Measure the income of the energy produced locally from the PV injected into the grid (not self-consumed).",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "EletricityPrice": {
+                "id": "DayAheadPrices:Austria",
+                "type": "External"
+            },
+            "EnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T16:38:30Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:30Z",
+        "taskId": "A35-K:I0000-V01",
+        "taskValue": 3369323.6719453903,
+        "name": "Income"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-7:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-7:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:38Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.07692307692307693
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-5:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-5:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-5:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:55Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 5.13
+    },
+    {
+        "id": "Lisbon-FCUL-Library:PV:KPI-Instance_Daily-Produced-Energy",
+        "type": "Task",
+        "description": "Measure the daily energy produced from the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Lisbon-FCUL-Library:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T14:58:40Z",
+        "dateObserved": "2024-09-30T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:46Z",
+        "taskId": "A35-K:APE00-V01",
+        "taskValue": 0.0,
+        "name": "Daily Produced Energy"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-4:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+        "type": "Task",
+        "description": "Average device count identified in off-hours.",
+        "category": "KPI-Instance",
+        "periodicity": "0 4 * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-4:Sensor_Device-Count",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T04:00:00Z",
+        "dateCreated": "2024-04-10T15:53:51Z",
+        "dateObserved": "2024-07-22T04:00:00Z",
+        "dateModified": "2024-07-23T04:00:36Z",
+        "taskId": "A13-K01-V01",
+        "taskValue": 0.5918367346938775
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-6:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-6:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-6:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:55Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 27.787499999999998
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Monthly-Produced-Energy",
+        "type": "Task",
+        "description": "Measure the monthly energy produced from the PV unit",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-05-13T15:04:09Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:18Z",
+        "taskId": "A35-K:APE00-V01",
+        "taskValue": 1568537.8815841675,
+        "name": "Monthly Produced Energy"
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Expected-Performance-Ratio",
+        "type": "Task",
+        "description": "Evaluate performance by quantifying the ratio of the actual and theoretically possible energy outputs.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            },
+            "YearlyExpectedEnergyOutput": {
+                "id": "Aspern-Office:Reference-Value:Expected-Energy-Output",
+                "type": "External"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-11T18:20:32Z",
+        "dateObserved": "2023-01-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:12:30Z",
+        "taskId": "A35-K:EPR00-V01",
+        "taskValue": 20546.332037644286,
+        "name": "Expected Performance Ratio"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:KPI-Instance_Average-Temperature-Deviation",
+        "type": "Task",
+        "description": "Average temperature deviation from a comfort range.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "tempSensor": {
+                "id": "Lisbon-FCUL-Library:Atrium:VirtualSensor-Instance_Average-Temperature",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T16:34:59Z",
+        "validTo": "2024-10-01T16:40:00Z",
+        "dateCreated": "2024-04-23T13:56:50Z",
+        "dateObserved": "2024-10-01T16:35:00Z",
+        "arguments": {
+            "above_thresh": 25,
+            "below_thresh": 20
+        },
+        "dateModified": "2024-10-01T16:40:32Z",
+        "taskId": "A11-K:01-V02",
+        "taskValue": 0,
+        "name": "Hourly Average temperature deviation in Atrium zone of FCUL Library"
+    },
+    {
+        "id": "Aspern-Office:Floor-Dachgeschoss:PV:KPI-Instance_Self-Comsumption-of-Renewables:Monthly",
+        "type": "Task",
+        "description": "Measure the energy produced by the PV unit self-consumed locally, giving insight into the dimensioning of the PV unit.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "ActiveEnergyInjected": {
+                "id": "Aspern-Office:Sensor_Grid-Feed-in",
+                "type": "Device"
+            },
+            "ProducedEnergy": {
+                "id": "Aspern-Office:Floor-Dachgeschoss:PV:Sensor_Energy-Production",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-10T14:13:47Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:38Z",
+        "taskId": "A35-K:SCR00-V01",
+        "taskValue": -889364754.0481033,
+        "name": "Self-Comsumption of Renewables"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:KPI-Instance_Percentage-Outside-Comfort",
+        "type": "Task",
+        "description": "Percentage of time outside of thermal comfort range.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "occupation_hours": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation-Status",
+                "type": "Task"
+            },
+            "temp_dev": {
+                "id": "Lisbon-FCUL-Library:Atrium:KPI-Instance_Average-Temperature-Deviation",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-20T10:59:59Z",
+        "validTo": "2024-07-20T12:00:00Z",
+        "dateCreated": "2024-05-02T22:42:08Z",
+        "dateObserved": "2024-07-20T11:00:00Z",
+        "dateModified": "2024-07-20T12:01:47Z",
+        "taskId": "A11-K:02-V01",
+        "taskValue": {
+            "above_threshold": 1.0,
+            "below_threshold": 0.0,
+            "within_comfort": 0.0
+        },
+        "name": "Percentage of time outside of thermal comfort range in Atrium zone of FCUL Library"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-3:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-3:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-3:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:39Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 6.770204081632653
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-3:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-3:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-3:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:29Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 0
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-6:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-6:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-6:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:19Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 2.373061224489796
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-1:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-1:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-1:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:21Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 1.849591836734694
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Room-2:KPI-Instance_Occupancy-Estimate",
+        "type": "Task",
+        "description": "Estimate of the number of people connected to an access point.",
+        "category": "KPI-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AP": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-2:Sensor_Device-Count",
+                "type": "Device"
+            },
+            "Baseline": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Room-2:VirtualSensor-Instance_Off-Hours-Average-Device-Count",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-10T17:33:33Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "avg_per_person": 0.95,
+            "device_rate_per_person": 1.8
+        },
+        "dateModified": "2024-07-22T15:19:31Z",
+        "taskId": "A13-K02-V01",
+        "taskValue": 4.711224489795918
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Max-Supply-Temperature-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the max supply temperature deviation in the AHU, takes as input a timeseries of supply temperature and supply temperature setpoints and outputs the max supply temperature deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-07T09:27:45Z",
+        "dateObserved": "2024-07-24T16:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-07-24T17:00:25Z",
+        "taskId": "A28-K:SC000-V04",
+        "taskValue": 0,
+        "name": "Max Supply Temperature Deviation"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Specific-Heating-Energy-Use:Hourly",
+        "type": "Task",
+        "description": "KPI definition for the specific heating energy use for the AHU, takes as input a timeseries of supply air flow, extracion air flow, and electricity use to heat and outputs the specific electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-12T18:08:51Z",
+        "dateObserved": "2024-09-24T18:59:59Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-09-27T09:57:15Z",
+        "taskId": "A28-K:SC500-V02",
+        "taskValue": 0,
+        "name": "Specific Heating Energy Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Heating-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the heating energy use in the AHU, takes as input a timeseries of heating energy use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "HeatUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-05T14:00:44Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:EP200-V01",
+        "taskValue": 0.0,
+        "name": "Heating Energy Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Max-Supply-Pressure-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the maximum supply pressure deviation in the AHU, takes as input a timeseries of supply pressure and supply pressure setpoints and outputs the maximum supply pressure deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-07T09:12:48Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC000-V02",
+        "taskValue": 54.4500045776,
+        "name": "Max Supply Pressure Deviation"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Cooling-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the cooling peak power in the AHU, takes as input a timeseries of electrical energy use for heating device and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-08-31T17:50:05Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:BP100-V03",
+        "taskValue": 40339100,
+        "name": "Cooling Peak Power"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Fan-Electricity-use",
+        "type": "Task",
+        "description": "KPI definition for the electricity use for the fan, takes as input a timeseries of electricity use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Exhaust-Fan-Power",
+                "unit": "KWT"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-12T19:30:22Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-09-27T09:39:24Z",
+        "taskId": "A28-K:EP100-V02",
+        "taskValue": 0.0,
+        "name": "Fan Electricity use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Specific-Electricity-Use",
+        "type": "Task",
+        "description": "KPI definition for the specific electricity use for the AHU, takes as input a timeseries of supply air flow, extracion air flow, and electricity use and outputs the specific electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device"
+            },
+            "ExtFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-07T09:50:35Z",
+        "dateObserved": "2024-09-24T14:59:59Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC500-V01",
+        "taskValue": 14863.022581426987,
+        "name": "Specific Electricity Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Electrical-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the electrical peak power in the AHU, takes as input a timeseries of electrical energy use and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:Sensor_Total-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Total-Load",
+                "unit": "KWT"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-01T21:43:04Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:BP100-V01",
+        "taskValue": 131.766373,
+        "name": "Electrical Peak Power"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Specific-Fan-Power",
+        "type": "Task",
+        "description": "KPI definition for the specific fan power in the AHU, takes as input a timeseries of fan power and fan flow outputs the sum specific fan power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-12T19:40:34Z",
+        "dateObserved": "2024-09-29T12:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-09-29T13:06:52Z",
+        "taskId": "A28-K:SC500-V04",
+        "taskValue": 0,
+        "name": "Specific Fan Power"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Water-Based-Heating-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the specific heating energy use in the AHU, takes as input a timeseries of heating energy use and the flow rate over the heating coil and outputs the specific heating energy use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-25T21:57:59Z",
+        "dateObserved": "2024-09-24T14:59:59Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC500-V05",
+        "taskValue": 0.0,
+        "name": "Water Based Heating Energy Use"
+    }
+]

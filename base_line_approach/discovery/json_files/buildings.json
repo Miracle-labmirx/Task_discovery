@@ -1,0 +1,1781 @@
+[
+    {
+        "id": "Aalborg-Office",
+        "type": "Building",
+        "category": "Office",
+        "hasZone": [
+            "Aalborg-Office:West-Internal",
+            "Aalborg-Office:West-North-Facing",
+            "Aalborg-Office:West-South-Facing",
+            "Aalborg-Office:West-West-Facing"
+        ],
+        "ifcId": "2NLfjMprv1ausT6U$ux7zd",
+        "contains": [
+            "Aalborg-Office:HVAC_KOMF01",
+            "Aalborg-Office:Sensor_Accumulated-Load",
+            "Aalborg-Office:Sensor_Total-Load"
+        ],
+        "hasSpace": [
+            "Aalborg-Office:Floor-0",
+            "Aalborg-Office:Floor-1",
+            "Aalborg-Office:Floor-2",
+            "Aalborg-Office:Floor-3",
+            "Aalborg-Office:Floor-4",
+            "Aalborg-Office:Floor-5"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "Thomas Manns Vej",
+            "addressLocality": "Aalborg Universitetskvarter"
+        },
+        "area": 9000,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                57.014722,
+                9.973124
+            ]
+        },
+        "name": "Aalborg University"
+    },
+    {
+        "id": "Aalborg-Residential",
+        "type": "Building",
+        "category": "Residential",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11",
+            "Aalborg-Residential:Stair-11:Floor-0",
+            "Aalborg-Residential:Stair-11:Floor-1",
+            "Aalborg-Residential:Stair-11:Floor-2"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "name": "Aalborg Residential"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left",
+        "type": "Building",
+        "category": "Apartment",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room-Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room-Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room-Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room-Kitchen",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Kitchen",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room-Livingroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Livingroom"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "area": 72,
+        "name": "Aalborg Residential, Entrance 11, Floor 0, Left"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right",
+        "type": "Building",
+        "category": "Apartment",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room-Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room-Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room-Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room-Kitchen-Livingroom",
+            "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Kitchen-Livingroom"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "area": 55,
+        "name": "Aalborg Residential, Entrance 11, Floor 0, Right"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left",
+        "type": "Building",
+        "category": "Apartment",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room-Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room-Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room-Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room-Kitchen",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Kitchen",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room-Livingroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Livingroom"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "area": 72,
+        "name": "Aalborg Residential, Entrance 11, Floor 1, Left"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right",
+        "type": "Building",
+        "category": "Apartment",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room-Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room-Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room-Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room-Kitchen-Livingroom",
+            "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Kitchen-Livingroom"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "area": 55,
+        "name": "Aalborg Residential, Entrance 11, Floor 1, Right"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left",
+        "type": "Building",
+        "category": "Apartment",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room-Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room-Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room-Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room-Kitchen",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Kitchen",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room-Livingroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Livingroom"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "area": 72,
+        "name": "Aalborg Residential, Entrance 11, Floor 2, Left"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right",
+        "type": "Building",
+        "category": "Apartment",
+        "hasSpace": [
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right:Room-Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right:Room_Bathroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right:Room-Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right:Room_Bedroom-Master",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right:Room-Kitchen-Livingroom",
+            "Aalborg-Residential:Stair-11:Floor-2:Apartment-Right:Room_Kitchen-Livingroom"
+        ],
+        "address": {
+            "addressCountry": "Denmark",
+            "addressRegion": "Aalborg",
+            "streetAddress": "TO BE ADDED",
+            "addressLocality": "Frederikshavn"
+        },
+        "area": 55,
+        "name": "Aalborg Residential, Entrance 11, Floor 2, Right"
+    },
+    {
+        "id": "Aspern-Office",
+        "type": "Building",
+        "category": "Office",
+        "contains": [
+            "Aspern-Office:Sensor_Energy-Consumption",
+            "Aspern-Office:Sensor_Grid-Feed-in"
+        ],
+        "hasSpace": "Aspern-Office:Floor-Dachgeschoss",
+        "address": {
+            "addressCountry": "Austria",
+            "addressRegion": "Vienna",
+            "streetAddress": "Christine-Touaillon-Straße 11, 1220 Wien",
+            "addressLocality": "Aspern"
+        },
+        "area": 5600,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                48.222493,
+                16.507867
+            ]
+        },
+        "name": "Aspern Office"
+    },
+    {
+        "id": "California-Berkeley-Office",
+        "type": "Building",
+        "category": "Office",
+        "hasZone": [
+            "California-Berkeley-Office:North-Wing",
+            "California-Berkeley-Office:South-Wing"
+        ],
+        "contains": [
+            "California-Berkeley-Office:HVAC",
+            "California-Berkeley-Office:Sensor-Total-Load"
+        ],
+        "hasSpace": [
+            "California-Berkeley-Office:Floor-1",
+            "California-Berkeley-Office:Floor-2",
+            "California-Berkeley-Office:Floor-3"
+        ],
+        "address": {
+            "addressCountry": "United States of America",
+            "addressRegion": "California",
+            "streetAddress": "Lawrence Berkeley National Laboratory",
+            "addressLocality": "Berkeley"
+        },
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                37.875916,
+                -122.252598
+            ]
+        },
+        "name": "Berkeley Office pilot for SATO demo"
+    },
+    {
+        "id": "Lisbon-FCUL-Library",
+        "type": "Building",
+        "category": "Office",
+        "ifcId": "0tvQI$v8D1XApAUu_bKepf",
+        "contains": "Lisbon-FCUL-Library:HVAC:RTU-North:Actuator_CO2-air-quality-control-setpoint",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Lisbon",
+            "streetAddress": "Campo Grande 016, 1749-016 Lisboa",
+            "addressLocality": "Campo Grande"
+        },
+        "peopleCapacity": 250,
+        "name": "FCUL Library"
+    },
+    {
+        "id": "Milan-MultiApartment-1",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "name": "Milan Multi-Apartment complex - Building 1"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-1:Floor-1:Apartment-18",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 73.34,
+        "name": "Apartment 18, Floor nº 1, Stair nº 1"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-1:Floor-1:Apartment-22",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 38.09,
+        "name": "Apartment 22, Floor nº 1, Stair nº 1"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-2:Floor-0:Apartment-14",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 41.32,
+        "name": "Apartment 14, Ground floor, Stair nº 2"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-2:Floor-1:Apartment-4",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 74.35,
+        "name": "Apartment 4, Floor nº 1, Stair nº 2"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-2:Floor-1:Apartment-7",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 38.47,
+        "name": "Apartment 7, Floor nº 1, Stair nº 2"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-2:Floor-2:Apartment-10",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 74.34,
+        "name": "Apartment 10, Floor nº 2, Stair nº 2"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-2:Floor-2:Apartment-3",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 98.79,
+        "name": "Apartment 3, Floor nº 2, Stair nº 2"
+    },
+    {
+        "id": "Milan-MultiApartment-1:Stair-2:Floor-3:Apartment-17",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 38.79,
+        "name": "Apartment 17, Floor nº 3, Stair nº 2"
+    },
+    {
+        "id": "Milan-MultiApartment-2",
+        "type": "Building",
+        "category": "Residential",
+        "hasSpace": [
+            "Milan-MultiApartment-2:Stair-4",
+            "Milan-MultiApartment-2:Stair-5"
+        ],
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 4165,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                45.416685,
+                9.241402
+            ]
+        },
+        "name": "Milan Multi-Apartment complex - Building 2"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-0:Apartment-34",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 89.22,
+        "name": "Apartment 34 , Ground floor, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-1:Apartment-58",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 41.16,
+        "name": "Apartment 58, Floor nº 1, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-2:Apartment-33",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 72.68,
+        "name": "Apartment 33, Floor nº 2, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-2:Apartment-52",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 73.05,
+        "name": "Apartment , Floor nº 2, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-2:Apartment-59",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 47.9,
+        "name": "Apartment 59, Floor nº 2, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-2:Apartment-60",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 41.16,
+        "name": "Apartment 60, Floor nº 2, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-3:Apartment-53",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 72.68,
+        "name": "Apartment 53, Floor nº 3, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-3:Floor-3:Apartment-65",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 41.35,
+        "name": "Apartment 65, Floor nº 3, Stair nº 3"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-4:Floor-0:Apartment-45",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 71.77,
+        "name": "Apartment 45, Ground floor, Stair nº 4"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-4:Floor-1:Apartment-44",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 39.77,
+        "name": "Apartment 44, Floor nº 1, Stair nº 4"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-1:Apartment-35",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 62.09,
+        "name": "Apartment 35, Floor nº 1, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-1:Apartment-41",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 62.05,
+        "name": "Apartment 41, Floor nº 1, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-1:Apartment-61",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 41.29,
+        "name": "Apartment 61, Floor nº 1, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-2:Apartment-28",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 62.09,
+        "name": "Apartment 28, Floor nº 2, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-3:Apartment-26",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 41.3,
+        "name": "Apartment 26, Floor nº 3, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-3:Apartment-29",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 62.67,
+        "name": "Apartment 29, Floor nº 3, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-3:Apartment-40",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 61.95,
+        "name": "Apartment 40, Floor nº 3, Stair nº 5"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Floor-3:Apartment-51",
+        "type": "Building",
+        "category": "Residential",
+        "address": {
+            "addressCountry": "Italy",
+            "addressRegion": "Milan",
+            "streetAddress": "San Bernardo 29, Milano",
+            "addressLocality": "Milan"
+        },
+        "area": 47.43,
+        "name": "Apartment 51, Floor nº 3, Stair nº 5"
+    },
+    {
+        "id": "Seixal-007ad81230703f8a",
+        "type": "Building",
+        "category": "Residential",
+        "contains": "Seixal-007ad81230703f8a:Gateway-688AB501AE47",
+        "hasSpace": [
+            "Seixal-007ad81230703f8a:Room-74d91ca15f255a32",
+            "Seixal-007ad81230703f8a:Room-9580da5f10ab15fe",
+            "Seixal-007ad81230703f8a:Room-d92b723dea7c4b7f"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua das Amoreiras 24 A, Pinhal Vidal",
+            "addressLocality": "Seixal"
+        },
+        "area": 180,
+        "name": "Rua das Amoreiras 24 A, Pinhal Vidal"
+    },
+    {
+        "id": "Seixal-0421a5091295b383",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-0421a5091295b383:Gateway-688AB5019917",
+            "Seixal-0421a5091295b383:Gateway-688AB5019917:Meter-688AB5004F9D:02",
+            "Seixal-0421a5091295b383:Gateway-688AB5019917:Meter-688AB5004F9D:03"
+        ],
+        "hasSpace": [
+            "Seixal-0421a5091295b383:Room-567de0acb3454c7e",
+            "Seixal-0421a5091295b383:Room-74d91ca15f255a32",
+            "Seixal-0421a5091295b383:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Praceta Leonilda Moreira de Sá e Costa nº3, 5º Esq",
+            "addressLocality": "Seixal"
+        },
+        "area": 84,
+        "name": "Praceta Leonilda Moreira de Sá e Costa nº3, 5º Esq"
+    },
+    {
+        "id": "Seixal-0e31ded35cdcadb7",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-0e31ded35cdcadb7:Gateway-688AB501AD9F",
+            "Seixal-0e31ded35cdcadb7:Gateway-688AB501AD9F:Meter-688AB500490F:02",
+            "Seixal-0e31ded35cdcadb7:Gateway-688AB501AD9F:Meter-688AB500490F:03",
+            "Seixal-0e31ded35cdcadb7:Gateway-688AB501AD9F:Meter-688AB500490F:04"
+        ],
+        "hasSpace": [
+            "Seixal-0e31ded35cdcadb7:Room-567de0acb3454c7e",
+            "Seixal-0e31ded35cdcadb7:Room-74d91ca15f255a32",
+            "Seixal-0e31ded35cdcadb7:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Capitão Francisco Robalo nº 7, vivenda Torres, 1º",
+            "addressLocality": "Seixal"
+        },
+        "area": 120,
+        "name": "Rua Capitão Francisco Robalo nº 7, vivenda Torres, 1º"
+    },
+    {
+        "id": "Seixal-0fac578845e5b699",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-0fac578845e5b699:Gateway-688AB501AEB3",
+            "Seixal-0fac578845e5b699:Gateway-688AB501AEB3:Meter-688AB5004A8D:02",
+            "Seixal-0fac578845e5b699:Gateway-688AB501AEB3:Meter-688AB5004A8D:03",
+            "Seixal-0fac578845e5b699:Gateway-688AB501AEB3:Meter-688AB5004A8D:04"
+        ],
+        "hasSpace": [
+            "Seixal-0fac578845e5b699:Room-567de0acb3454c7e",
+            "Seixal-0fac578845e5b699:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Vasco da Gama 9 R/C Dto, Casal do Marco",
+            "addressLocality": "Seixal"
+        },
+        "area": 102,
+        "name": "Rua Vasco da Gama 9 R/C Dto, Casal do Marco"
+    },
+    {
+        "id": "Seixal-10f19f4b282976f3",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-10f19f4b282976f3:Gateway-688AB501A9CD",
+            "Seixal-10f19f4b282976f3:Gateway-688AB501A9CD:Meter-688AB5028FEB:02",
+            "Seixal-10f19f4b282976f3:Gateway-688AB501A9CD:Meter-688AB5028FEB:03",
+            "Seixal-10f19f4b282976f3:Gateway-688AB501A9CD:Meter-688AB5028FEB:04"
+        ],
+        "hasSpace": [
+            "Seixal-10f19f4b282976f3:Room-62879487db8dc8de",
+            "Seixal-10f19f4b282976f3:Room-74d91ca15f255a32",
+            "Seixal-10f19f4b282976f3:Room-9580da5f10ab15fe",
+            "Seixal-10f19f4b282976f3:Room-ece3f0363a7c942e"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Bento Gonçalves, lote 618, 1º",
+            "addressLocality": "Seixal"
+        },
+        "area": 100,
+        "name": "Rua Bento Gonçalves, lote 618, 1º"
+    },
+    {
+        "id": "Seixal-14ac33cc2d557a44",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-14ac33cc2d557a44:Gateway-688AB50199FE",
+            "Seixal-14ac33cc2d557a44:Gateway-688AB50199FE:Meter-688AB50297B9:02",
+            "Seixal-14ac33cc2d557a44:Gateway-688AB50199FE:Meter-688AB50297B9:03",
+            "Seixal-14ac33cc2d557a44:Gateway-688AB50199FE:Meter-688AB50297B9:04"
+        ],
+        "hasSpace": [
+            "Seixal-14ac33cc2d557a44:Room-567de0acb3454c7e",
+            "Seixal-14ac33cc2d557a44:Room-74d91ca15f255a32",
+            "Seixal-14ac33cc2d557a44:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Praceta Maria Fragoso nº4, Valadares, 2855-519 Corroios",
+            "addressLocality": "Seixal"
+        },
+        "area": 90,
+        "name": "Praceta Maria Fragoso nº4, Valadares, 2855-519 Corroios"
+    },
+    {
+        "id": "Seixal-166607eff0a122cb",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-166607eff0a122cb:Gateway-688AB501AEF5",
+            "Seixal-166607eff0a122cb:Gateway-688AB501AEF5:Meter-688AB50328A9:02",
+            "Seixal-166607eff0a122cb:Gateway-688AB501AEF5:Meter-688AB50328A9:03"
+        ],
+        "hasSpace": "Seixal-166607eff0a122cb:Room-9580da5f10ab15fe",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R das Flores 19A Pinhal Frades",
+            "addressLocality": "Seixal"
+        },
+        "area": 200,
+        "name": "R das Flores 19A Pinhal Frades"
+    },
+    {
+        "id": "Seixal-1b08b84bc51cb6b8",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-1b08b84bc51cb6b8:Gateway-688AB501AE3B",
+            "Seixal-1b08b84bc51cb6b8:Gateway-688AB501AE3B:Meter-688AB502A0B1:02",
+            "Seixal-1b08b84bc51cb6b8:Gateway-688AB501AE3B:Meter-688AB502A0B1:03",
+            "Seixal-1b08b84bc51cb6b8:Gateway-688AB501AE3B:Meter-688AB502A0B1:04"
+        ],
+        "hasSpace": [
+            "Seixal-1b08b84bc51cb6b8:Room-567de0acb3454c7e",
+            "Seixal-1b08b84bc51cb6b8:Room-74d91ca15f255a32",
+            "Seixal-1b08b84bc51cb6b8:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R. António Garibaldi, 24, 1ºEsq, 2855-592 Corroios",
+            "addressLocality": "Seixal"
+        },
+        "area": 98,
+        "name": "R. António Garibaldi, 24, 1ºEsq, 2855-592 Corroios"
+    },
+    {
+        "id": "Seixal-2574a4a2a3010c00",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-2574a4a2a3010c00:Gateway-688AB5018894",
+            "Seixal-2574a4a2a3010c00:Gateway-688AB5018894:Meter-688AB5032799:02",
+            "Seixal-2574a4a2a3010c00:Gateway-688AB5018894:Meter-688AB5032799:03",
+            "Seixal-2574a4a2a3010c00:Gateway-688AB5018894:Meter-688AB5032799:04"
+        ],
+        "hasSpace": [
+            "Seixal-2574a4a2a3010c00:Room-567de0acb3454c7e",
+            "Seixal-2574a4a2a3010c00:Room-74d91ca15f255a32",
+            "Seixal-2574a4a2a3010c00:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Miguel Tiago 7 Vale Milhaços (morada ficheiro AMES é Rua Manuel Tiago nº.5, Vale Milhaços )",
+            "addressLocality": "Seixal"
+        },
+        "area": 160,
+        "name": "R Miguel Tiago 7 Vale Milhaços (morada ficheiro AMES é Rua Manuel Tiago nº.5, Vale Milhaços )"
+    },
+    {
+        "id": "Seixal-258d525525a8ee82",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-258d525525a8ee82:Gateway-688AB501AA15",
+            "Seixal-258d525525a8ee82:Gateway-688AB501AA15:Meter-688AB502A165"
+        ],
+        "hasSpace": [
+            "Seixal-258d525525a8ee82:Room-567de0acb3454c7e",
+            "Seixal-258d525525a8ee82:Room-74d91ca15f255a32",
+            "Seixal-258d525525a8ee82:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Praceta  Estevão Amarante nº 2, 3º Esq",
+            "addressLocality": "Seixal"
+        },
+        "area": 100,
+        "name": "Praceta  Estevão Amarante nº 2, 3º Esq"
+    },
+    {
+        "id": "Seixal-26d87faa02d0f6ad",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-26d87faa02d0f6ad:Gateway-688AB501AE62",
+            "Seixal-26d87faa02d0f6ad:Gateway-688AB501AE62:Meter-688AB5004DAF:02",
+            "Seixal-26d87faa02d0f6ad:Gateway-688AB501AE62:Meter-688AB5004DAF:03",
+            "Seixal-26d87faa02d0f6ad:Gateway-688AB501AE62:Meter-688AB5004DAF:04"
+        ],
+        "hasSpace": [
+            "Seixal-26d87faa02d0f6ad:Room-05ce92bc38766dbf",
+            "Seixal-26d87faa02d0f6ad:Room-4178b3e5bd0bd5dc",
+            "Seixal-26d87faa02d0f6ad:Room-8f3271acedd2868d",
+            "Seixal-26d87faa02d0f6ad:Room-9580da5f10ab15fe",
+            "Seixal-26d87faa02d0f6ad:Room-f074c094d955d559"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Foros de Amora 36, 3º Fte Esq, Condomínio Pátio das Artes",
+            "addressLocality": "Seixal"
+        },
+        "area": 90,
+        "name": "Rua Foros de Amora 36, 3º Fte Esq, Condomínio Pátio das Artes"
+    },
+    {
+        "id": "Seixal-27c8c9dda8094021",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-27c8c9dda8094021:Gateway-688AB5019A43",
+            "Seixal-27c8c9dda8094021:Gateway-688AB5019A43:Meter-688AB5004F99:02",
+            "Seixal-27c8c9dda8094021:Gateway-688AB5019A43:Meter-688AB5004F99:03",
+            "Seixal-27c8c9dda8094021:Gateway-688AB5019A43:Meter-688AB5004F99:04"
+        ],
+        "hasSpace": [
+            "Seixal-27c8c9dda8094021:Room-74d91ca15f255a32",
+            "Seixal-27c8c9dda8094021:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Serra da Gardunha 33A, Redondos",
+            "addressLocality": "Seixal"
+        },
+        "area": 158,
+        "name": "Rua Serra da Gardunha 33A, Redondos"
+    },
+    {
+        "id": "Seixal-355e6bebbdcdcc34",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-355e6bebbdcdcc34:Gateway-688AB5019914",
+            "Seixal-355e6bebbdcdcc34:Gateway-688AB5019914:Meter-688AB5032805:02",
+            "Seixal-355e6bebbdcdcc34:Gateway-688AB5019914:Meter-688AB5032805:03",
+            "Seixal-355e6bebbdcdcc34:Gateway-688AB5019914:Meter-688AB5032805:04"
+        ],
+        "hasSpace": [
+            "Seixal-355e6bebbdcdcc34:Room-567de0acb3454c7e",
+            "Seixal-355e6bebbdcdcc34:Room-5881c6087ab9d845",
+            "Seixal-355e6bebbdcdcc34:Room-74d91ca15f255a32",
+            "Seixal-355e6bebbdcdcc34:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Qta Fidalga, 24",
+            "addressLocality": "Seixal"
+        },
+        "name": "R Qta Fidalga, 24"
+    },
+    {
+        "id": "Seixal-3657ba68e15cff35",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-3657ba68e15cff35:Gateway-688AB5019A34",
+            "Seixal-3657ba68e15cff35:Gateway-688AB5019A34:Meter-688AB5004D2B:02"
+        ],
+        "hasSpace": [
+            "Seixal-3657ba68e15cff35:Room-567de0acb3454c7e",
+            "Seixal-3657ba68e15cff35:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Praceta João Azevedo nº 3, 2º Esq, Sta Marta do Pinhal",
+            "addressLocality": "Seixal"
+        },
+        "area": 99,
+        "name": "Praceta João Azevedo nº 3, 2º Esq, Sta Marta do Pinhal"
+    },
+    {
+        "id": "Seixal-39d970c0d629612a",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-39d970c0d629612a:Gateway-688AB50199E6",
+            "Seixal-39d970c0d629612a:Gateway-688AB50199E6:Meter-688AB500569F:02",
+            "Seixal-39d970c0d629612a:Gateway-688AB50199E6:Meter-688AB500569F:03",
+            "Seixal-39d970c0d629612a:Gateway-688AB50199E6:Meter-688AB500569F:04",
+            "Seixal-39d970c0d629612a:Gateway-688AB50199E6:Meter-688AB50328B3:02",
+            "Seixal-39d970c0d629612a:Gateway-688AB50199E6:Meter-688AB50328B3:03"
+        ],
+        "hasSpace": [
+            "Seixal-39d970c0d629612a:Room-567de0acb3454c7e",
+            "Seixal-39d970c0d629612a:Room-74d91ca15f255a32",
+            "Seixal-39d970c0d629612a:Room-9580da5f10ab15fe",
+            "Seixal-39d970c0d629612a:Room-c268941b0af9c2d0"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Joaquim Batista Pereira Lote 16 (porta Rua Gil Vicente)",
+            "addressLocality": "Seixal"
+        },
+        "area": 225,
+        "name": "Rua Joaquim Batista Pereira Lote 16 (porta Rua Gil Vicente)"
+    },
+    {
+        "id": "Seixal-3d1781a0e844659a",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-3d1781a0e844659a:Gateway-688AB5019A37",
+            "Seixal-3d1781a0e844659a:Gateway-688AB5019A37:Meter-688AB5004E71:02",
+            "Seixal-3d1781a0e844659a:Gateway-688AB5019A37:Meter-688AB5004E71:03",
+            "Seixal-3d1781a0e844659a:Gateway-688AB5019A37:Meter-688AB5004E71:04"
+        ],
+        "hasSpace": [
+            "Seixal-3d1781a0e844659a:Room-567de0acb3454c7e",
+            "Seixal-3d1781a0e844659a:Room-74d91ca15f255a32",
+            "Seixal-3d1781a0e844659a:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Av 1 de junho nº 104, Bacelo de Gaio",
+            "addressLocality": "Seixal"
+        },
+        "name": "Av 1 de junho nº 104, Bacelo de Gaio"
+    },
+    {
+        "id": "Seixal-3eccdfd377121c4c",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-3eccdfd377121c4c:Gateway-688AB501AE17",
+            "Seixal-3eccdfd377121c4c:Gateway-688AB501AE17:Meter-688AB5004BA7:02",
+            "Seixal-3eccdfd377121c4c:Gateway-688AB501AE17:Meter-688AB5004BA7:03",
+            "Seixal-3eccdfd377121c4c:Gateway-688AB501AE17:Meter-688AB5004BA7:04"
+        ],
+        "hasSpace": [
+            "Seixal-3eccdfd377121c4c:Room-567de0acb3454c7e",
+            "Seixal-3eccdfd377121c4c:Room-74d91ca15f255a32",
+            "Seixal-3eccdfd377121c4c:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Ernesto Melo Antunes nº5 R/C Esq",
+            "addressLocality": "Seixal"
+        },
+        "area": 65,
+        "name": "Rua Ernesto Melo Antunes nº5 R/C Esq"
+    },
+    {
+        "id": "Seixal-4da1815a47c26591",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-4da1815a47c26591:Gateway-688AB501AE2C",
+            "Seixal-4da1815a47c26591:Gateway-688AB501AE2C:Meter-688AB5005045:02",
+            "Seixal-4da1815a47c26591:Gateway-688AB501AE2C:Meter-688AB5005045:03",
+            "Seixal-4da1815a47c26591:Gateway-688AB501AE2C:Meter-688AB5005045:04"
+        ],
+        "hasSpace": [
+            "Seixal-4da1815a47c26591:Room-567de0acb3454c7e",
+            "Seixal-4da1815a47c26591:Room-74d91ca15f255a32",
+            "Seixal-4da1815a47c26591:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua António Garibaldi nº 14, 1º Dto",
+            "addressLocality": "Seixal"
+        },
+        "area": 113,
+        "name": "Rua António Garibaldi nº 14, 1º Dto"
+    },
+    {
+        "id": "Seixal-5088d5c431801372",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-5088d5c431801372:Gateway-688AB501991A",
+            "Seixal-5088d5c431801372:Gateway-688AB501991A:Meter-688AB5004891:02",
+            "Seixal-5088d5c431801372:Gateway-688AB501991A:Meter-688AB5004891:03",
+            "Seixal-5088d5c431801372:Gateway-688AB501991A:Meter-688AB5004891:04"
+        ],
+        "hasSpace": [
+            "Seixal-5088d5c431801372:Room-567de0acb3454c7e",
+            "Seixal-5088d5c431801372:Room-74d91ca15f255a32",
+            "Seixal-5088d5c431801372:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Fernão Lopes nº28 R/C Direito",
+            "addressLocality": "Seixal"
+        },
+        "area": 120,
+        "name": "Rua Fernão Lopes nº28 R/C Direito"
+    },
+    {
+        "id": "Seixal-53c7249c29596185",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-53c7249c29596185:Gateway-688AB501AEF8",
+            "Seixal-53c7249c29596185:Gateway-688AB501AEF8:Meter-688AB5004F2D:02",
+            "Seixal-53c7249c29596185:Gateway-688AB501AEF8:Meter-688AB5004F2D:03",
+            "Seixal-53c7249c29596185:Gateway-688AB501AEF8:Meter-688AB5004F2D:04"
+        ],
+        "hasSpace": [
+            "Seixal-53c7249c29596185:Room-567de0acb3454c7e",
+            "Seixal-53c7249c29596185:Room-74d91ca15f255a32",
+            "Seixal-53c7249c29596185:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Teixeira de Queirós nº 13, Casal do Marco",
+            "addressLocality": "Seixal"
+        },
+        "area": 120,
+        "name": "Rua Teixeira de Queirós nº 13, Casal do Marco"
+    },
+    {
+        "id": "Seixal-5480e24218866a57",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-5480e24218866a57:Gateway-688AB5019956",
+            "Seixal-5480e24218866a57:Gateway-688AB5019956:Meter-688AB5004901:02",
+            "Seixal-5480e24218866a57:Gateway-688AB5019956:Meter-688AB5004901:03",
+            "Seixal-5480e24218866a57:Gateway-688AB5019956:Meter-688AB5004901:04"
+        ],
+        "hasSpace": [
+            "Seixal-5480e24218866a57:Room-567de0acb3454c7e",
+            "Seixal-5480e24218866a57:Room-74d91ca15f255a32",
+            "Seixal-5480e24218866a57:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua José Gomes nº 11A, Redondos",
+            "addressLocality": "Seixal"
+        },
+        "name": "Rua José Gomes nº 11A, Redondos"
+    },
+    {
+        "id": "Seixal-5766c4fb2678f441",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-5766c4fb2678f441:Gateway-688AB501AEB6",
+            "Seixal-5766c4fb2678f441:Gateway-688AB501AEB6:Meter-688AB50048BD:02",
+            "Seixal-5766c4fb2678f441:Gateway-688AB501AEB6:Meter-688AB50048BD:03",
+            "Seixal-5766c4fb2678f441:Gateway-688AB501AEB6:Meter-688AB50048BD:04"
+        ],
+        "hasSpace": [
+            "Seixal-5766c4fb2678f441:Room-567de0acb3454c7e",
+            "Seixal-5766c4fb2678f441:Room-74d91ca15f255a32",
+            "Seixal-5766c4fb2678f441:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua da Juventude, lote 589, 1º G (por cima do centro comercial)",
+            "addressLocality": "Seixal"
+        },
+        "area": 70,
+        "name": "Rua da Juventude, lote 589, 1º G (por cima do centro comercial)"
+    },
+    {
+        "id": "Seixal-612ee2bcab32bbe2",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-612ee2bcab32bbe2:Gateway-688AB501993B",
+            "Seixal-612ee2bcab32bbe2:Gateway-688AB501993B:Meter-688AB50328AD:02",
+            "Seixal-612ee2bcab32bbe2:Gateway-688AB501993B:Meter-688AB50328AD:03",
+            "Seixal-612ee2bcab32bbe2:Gateway-688AB501993B:Meter-688AB50328AD:04"
+        ],
+        "hasSpace": [
+            "Seixal-612ee2bcab32bbe2:Room-567de0acb3454c7e",
+            "Seixal-612ee2bcab32bbe2:Room-74d91ca15f255a32",
+            "Seixal-612ee2bcab32bbe2:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Jose Castro 28 Paio Pires",
+            "addressLocality": "Seixal"
+        },
+        "area": 164,
+        "name": "R Jose Castro 28 Paio Pires"
+    },
+    {
+        "id": "Seixal-632c540fc1e78fc9",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-632c540fc1e78fc9:Gateway-688AB501992F",
+            "Seixal-632c540fc1e78fc9:Gateway-688AB501992F:Meter-688AB50328B1:02",
+            "Seixal-632c540fc1e78fc9:Gateway-688AB501992F:Meter-688AB50328B1:03",
+            "Seixal-632c540fc1e78fc9:Gateway-688AB501992F:Meter-688AB50328B1:04"
+        ],
+        "hasSpace": [
+            "Seixal-632c540fc1e78fc9:Room-567de0acb3454c7e",
+            "Seixal-632c540fc1e78fc9:Room-74d91ca15f255a32",
+            "Seixal-632c540fc1e78fc9:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "General Humbert Delg 970 FerFer",
+            "addressLocality": "Seixal"
+        },
+        "area": 151,
+        "name": "General Humbert Delg 970 FerFer"
+    },
+    {
+        "id": "Seixal-6346d39ed9e65e5c",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-6346d39ed9e65e5c:Gateway-688AB501AF19",
+            "Seixal-6346d39ed9e65e5c:Gateway-688AB501AF19:Meter-00124B000FF93548",
+            "Seixal-6346d39ed9e65e5c:Gateway-688AB501AF19:Meter-688AB502A0A1:02",
+            "Seixal-6346d39ed9e65e5c:Gateway-688AB501AF19:Meter-688AB502A0A1:03",
+            "Seixal-6346d39ed9e65e5c:Gateway-688AB501AF19:Meter-688AB502A0A1:04"
+        ],
+        "hasSpace": [
+            "Seixal-6346d39ed9e65e5c:Room-567de0acb3454c7e",
+            "Seixal-6346d39ed9e65e5c:Room-74d91ca15f255a32",
+            "Seixal-6346d39ed9e65e5c:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Padre Pio nº 36, Pinhal de Frades, 2840-348 Seixal",
+            "addressLocality": "Seixal"
+        },
+        "area": 150,
+        "name": "Rua Padre Pio nº 36, Pinhal de Frades, 2840-348 Seixal"
+    },
+    {
+        "id": "Seixal-669dd07a29290a97",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-669dd07a29290a97:Gateway-688AB5019A46",
+            "Seixal-669dd07a29290a97:Gateway-688AB5019A46:Meter-688AB50052D9:02",
+            "Seixal-669dd07a29290a97:Gateway-688AB5019A46:Meter-688AB50052D9:03",
+            "Seixal-669dd07a29290a97:Gateway-688AB5019A46:Meter-688AB50052D9:04"
+        ],
+        "hasSpace": "Seixal-669dd07a29290a97:Room-8a779003ee94d502",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Dr Bernardino Machado nº26, Vale de Milhaços",
+            "addressLocality": "Seixal"
+        },
+        "area": 180,
+        "name": "Rua Dr Bernardino Machado nº26, Vale de Milhaços"
+    },
+    {
+        "id": "Seixal-8c8def2bb696ad86",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-8c8def2bb696ad86:Gateway-688AB501B003",
+            "Seixal-8c8def2bb696ad86:Gateway-688AB501B003:Meter-688AB5032897:02",
+            "Seixal-8c8def2bb696ad86:Gateway-688AB501B003:Meter-688AB5032897:03",
+            "Seixal-8c8def2bb696ad86:Gateway-688AB501B003:Meter-688AB5032897:04"
+        ],
+        "hasSpace": "Seixal-8c8def2bb696ad86:Room-9580da5f10ab15fe",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Jorge Brum Canto 4",
+            "addressLocality": "Seixal"
+        },
+        "area": 300,
+        "name": "R Jorge Brum Canto 4"
+    },
+    {
+        "id": "Seixal-8f140c113f0d1690",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-8f140c113f0d1690:Gateway-688AB501A652",
+            "Seixal-8f140c113f0d1690:Gateway-688AB501A652:Meter-688AB5029F6F"
+        ],
+        "hasSpace": [
+            "Seixal-8f140c113f0d1690:Room-463145daed553b00",
+            "Seixal-8f140c113f0d1690:Room-567de0acb3454c7e",
+            "Seixal-8f140c113f0d1690:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Bento Gonçalves, lote 618, RdC",
+            "addressLocality": "Seixal"
+        },
+        "area": 100,
+        "name": "Rua Bento Gonçalves, lote 618, RdC"
+    },
+    {
+        "id": "Seixal-9097877ea2ce7e2d",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-9097877ea2ce7e2d:Gateway-688AB5019A25",
+            "Seixal-9097877ea2ce7e2d:Gateway-688AB5019A25:Meter-688AB5032817:02"
+        ],
+        "hasSpace": [
+            "Seixal-9097877ea2ce7e2d:Room-567de0acb3454c7e",
+            "Seixal-9097877ea2ce7e2d:Room-74d91ca15f255a32",
+            "Seixal-9097877ea2ce7e2d:Room-9580da5f10ab15fe",
+            "Seixal-9097877ea2ce7e2d:Room-fef4aad09731983f"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R. Oliveiras, Vivenda Oliveira",
+            "addressLocality": "Seixal"
+        },
+        "area": 210,
+        "name": "R. Oliveiras, Vivenda Oliveira"
+    },
+    {
+        "id": "Seixal-987e1533f52a98f8",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-987e1533f52a98f8:Gateway-688AB501AF13",
+            "Seixal-987e1533f52a98f8:Gateway-688AB501AF13:Meter-688AB5004901:02",
+            "Seixal-987e1533f52a98f8:Gateway-688AB501AF13:Meter-688AB5004901:03",
+            "Seixal-987e1533f52a98f8:Gateway-688AB501AF13:Meter-688AB5004901:04"
+        ],
+        "hasSpace": [
+            "Seixal-987e1533f52a98f8:Room-74d91ca15f255a32",
+            "Seixal-987e1533f52a98f8:Room-c268941b0af9c2d0"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Florbela Espanca nº 30, Foros de Amora",
+            "addressLocality": "Seixal"
+        },
+        "area": 186,
+        "name": "Rua Florbela Espanca nº 30, Foros de Amora"
+    },
+    {
+        "id": "Seixal-99158cf6c00cd656",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-99158cf6c00cd656:Gateway-688AB5019908",
+            "Seixal-99158cf6c00cd656:Gateway-688AB5019908:Meter-688AB5029899:02",
+            "Seixal-99158cf6c00cd656:Gateway-688AB5019908:Meter-688AB5029899:03",
+            "Seixal-99158cf6c00cd656:Gateway-688AB5019908:Meter-688AB5029899:04"
+        ],
+        "hasSpace": [
+            "Seixal-99158cf6c00cd656:Room-31552737080246fd",
+            "Seixal-99158cf6c00cd656:Room-567de0acb3454c7e",
+            "Seixal-99158cf6c00cd656:Room-74d91ca15f255a32",
+            "Seixal-99158cf6c00cd656:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Adolfo Simões muller, nº15, 5ºEsq, 2840-269 Seixal",
+            "addressLocality": "Seixal"
+        },
+        "area": 80,
+        "name": "Rua Adolfo Simões muller, nº15, 5ºEsq, 2840-269 Seixal"
+    },
+    {
+        "id": "Seixal-9e8f731296963ab7",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-9e8f731296963ab7:Gateway-688AB501AD9C",
+            "Seixal-9e8f731296963ab7:Gateway-688AB501AD9C:Meter-688AB50328B7:02",
+            "Seixal-9e8f731296963ab7:Gateway-688AB501AD9C:Meter-688AB50328B7:03"
+        ],
+        "hasSpace": [
+            "Seixal-9e8f731296963ab7:Room-567de0acb3454c7e",
+            "Seixal-9e8f731296963ab7:Room-74d91ca15f255a32",
+            "Seixal-9e8f731296963ab7:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Av Gen Humberto Delgado 109",
+            "addressLocality": "Seixal"
+        },
+        "area": 107,
+        "name": "Av Gen Humberto Delgado 109"
+    },
+    {
+        "id": "Seixal-a27b75aca70e791d",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-a27b75aca70e791d:Gateway-688AB501ACBE",
+            "Seixal-a27b75aca70e791d:Gateway-688AB501ACBE:Meter-688AB5032811:02",
+            "Seixal-a27b75aca70e791d:Gateway-688AB501ACBE:Meter-688AB5032811:03",
+            "Seixal-a27b75aca70e791d:Gateway-688AB501ACBE:Meter-688AB5032811:04"
+        ],
+        "hasSpace": "Seixal-a27b75aca70e791d:Room-9580da5f10ab15fe",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Vereador Joao Roque 36 1oEsq",
+            "addressLocality": "Seixal"
+        },
+        "name": "R Vereador Joao Roque 36 1oEsq"
+    },
+    {
+        "id": "Seixal-a484efac7eebd721",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-a484efac7eebd721:Gateway-688AB501AE56",
+            "Seixal-a484efac7eebd721:Gateway-688AB501AE56:Meter-688AB500488F:02",
+            "Seixal-a484efac7eebd721:Gateway-688AB501AE56:Meter-688AB500488F:03",
+            "Seixal-a484efac7eebd721:Gateway-688AB501AE56:Meter-688AB500488F:04"
+        ],
+        "hasSpace": [
+            "Seixal-a484efac7eebd721:Room-2fbd19a57ca45fb9",
+            "Seixal-a484efac7eebd721:Room-567de0acb3454c7e",
+            "Seixal-a484efac7eebd721:Room-74d91ca15f255a32",
+            "Seixal-a484efac7eebd721:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Praceta Francisco Pulido Valente nº 12, R/C Esq",
+            "addressLocality": "Seixal"
+        },
+        "area": 100,
+        "name": "Praceta Francisco Pulido Valente nº 12, R/C Esq"
+    },
+    {
+        "id": "Seixal-b0d43bc1c617a6c8",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-b0d43bc1c617a6c8:Gateway-688AB501AE3E",
+            "Seixal-b0d43bc1c617a6c8:Gateway-688AB501AE3E:Meter-688AB50327AB:02",
+            "Seixal-b0d43bc1c617a6c8:Gateway-688AB501AE3E:Meter-688AB50327AB:03",
+            "Seixal-b0d43bc1c617a6c8:Gateway-688AB501AE3E:Meter-688AB50327AB:04"
+        ],
+        "hasSpace": [
+            "Seixal-b0d43bc1c617a6c8:Room-567de0acb3454c7e",
+            "Seixal-b0d43bc1c617a6c8:Room-74d91ca15f255a32",
+            "Seixal-b0d43bc1c617a6c8:Room-9580da5f10ab15fe",
+            "Seixal-b0d43bc1c617a6c8:Room-fef4aad09731983f"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Fundaçao 49 Pinhal Frades",
+            "addressLocality": "Seixal"
+        },
+        "area": 100,
+        "name": "R Fundaçao 49 Pinhal Frades"
+    },
+    {
+        "id": "Seixal-ba5ae683336da84b",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-ba5ae683336da84b:Gateway-688AB501ADAE",
+            "Seixal-ba5ae683336da84b:Gateway-688AB501ADAE:Meter-688AB5005457:02"
+        ],
+        "hasSpace": [
+            "Seixal-ba5ae683336da84b:Room-74d91ca15f255a32",
+            "Seixal-ba5ae683336da84b:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Comandante Ramiro Correia nº 7, 2º Esq",
+            "addressLocality": "Seixal"
+        },
+        "area": 70,
+        "name": "Rua Comandante Ramiro Correia nº 7, 2º Esq"
+    },
+    {
+        "id": "Seixal-bad183859d8b9f90",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-bad183859d8b9f90:Gateway-688AB5017208",
+            "Seixal-bad183859d8b9f90:Gateway-688AB5017208:Meter-688AB50328AF:02",
+            "Seixal-bad183859d8b9f90:Gateway-688AB5017208:Meter-688AB50328AF:03",
+            "Seixal-bad183859d8b9f90:Gateway-688AB5017208:Meter-688AB50328AF:04"
+        ],
+        "hasSpace": "Seixal-bad183859d8b9f90:Room-9580da5f10ab15fe",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Resende Dias 7A Redondos",
+            "addressLocality": "Seixal"
+        },
+        "area": 134,
+        "name": "R Resende Dias 7A Redondos"
+    },
+    {
+        "id": "Seixal-cdac548d2f448db5",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-cdac548d2f448db5:Gateway-688AB5019A49",
+            "Seixal-cdac548d2f448db5:Gateway-688AB5019A49:Meter-688AB5032801:02",
+            "Seixal-cdac548d2f448db5:Gateway-688AB5019A49:Meter-688AB5032801:03",
+            "Seixal-cdac548d2f448db5:Gateway-688AB5019A49:Meter-688AB5032801:04"
+        ],
+        "hasSpace": "Seixal-cdac548d2f448db5:Room-9580da5f10ab15fe",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Antonio Portugal 7 Redondos",
+            "addressLocality": "Seixal"
+        },
+        "area": 113,
+        "name": "R Antonio Portugal 7 Redondos"
+    },
+    {
+        "id": "Seixal-cef0aa30f1046ebd",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-cef0aa30f1046ebd:Gateway-688AB5019A2E",
+            "Seixal-cef0aa30f1046ebd:Gateway-688AB5019A2E:Meter-688AB5004D9D:02"
+        ],
+        "hasSpace": [
+            "Seixal-cef0aa30f1046ebd:Room-74d91ca15f255a32",
+            "Seixal-cef0aa30f1046ebd:Room-9580da5f10ab15fe",
+            "Seixal-cef0aa30f1046ebd:Room-f39e7c108bc80a05"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Gil Vicente nº19, 2º Dto ",
+            "addressLocality": "Seixal"
+        },
+        "name": "Rua Gil Vicente nº19, 2º Dto "
+    },
+    {
+        "id": "Seixal-City-Hall",
+        "type": "Building",
+        "category": "Office",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Alameda dos Bombeiros Voluntários 45, 2844-001 Seixal, Portugal",
+            "addressLocality": "Seixal"
+        },
+        "name": "Seixal City Hall"
+    },
+    {
+        "id": "Seixal-d40c133dc23595cd",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-d40c133dc23595cd:Gateway-688AB501AE35",
+            "Seixal-d40c133dc23595cd:Gateway-688AB501AE35:Meter-688AB502A0B5:02",
+            "Seixal-d40c133dc23595cd:Gateway-688AB501AE35:Meter-688AB502A0B5:03",
+            "Seixal-d40c133dc23595cd:Gateway-688AB501AE35:Meter-688AB502A0B5:04"
+        ],
+        "hasSpace": [
+            "Seixal-d40c133dc23595cd:Room-5881c6087ab9d845",
+            "Seixal-d40c133dc23595cd:Room-74d91ca15f255a32",
+            "Seixal-d40c133dc23595cd:Room-9580da5f10ab15fe",
+            "Seixal-d40c133dc23595cd:Room-a234ac356ae3726d"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua António Sérgio, nº9A, 2865-053 Fernão Ferro",
+            "addressLocality": "Seixal"
+        },
+        "area": 150,
+        "name": "Rua António Sérgio, nº9A, 2865-053 Fernão Ferro"
+    },
+    {
+        "id": "Seixal-d442ddfbacff88a8",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-d442ddfbacff88a8:Gateway-688AB501AA30",
+            "Seixal-d442ddfbacff88a8:Gateway-688AB501AA30:Meter-688AB5004FA7:02",
+            "Seixal-d442ddfbacff88a8:Gateway-688AB501AA30:Meter-688AB5004FA7:03"
+        ],
+        "hasSpace": [
+            "Seixal-d442ddfbacff88a8:Room-567de0acb3454c7e",
+            "Seixal-d442ddfbacff88a8:Room-74d91ca15f255a32",
+            "Seixal-d442ddfbacff88a8:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua António Augusto Louro nº 2, 1º D, Qta da Queimada",
+            "addressLocality": "Seixal"
+        },
+        "area": 97,
+        "name": "Rua António Augusto Louro nº 2, 1º D, Qta da Queimada"
+    },
+    {
+        "id": "Seixal-da8d848baa4f9fbd",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-da8d848baa4f9fbd:Gateway-688AB501A9CA",
+            "Seixal-da8d848baa4f9fbd:Gateway-688AB501A9CA:Meter-688AB500485B:02"
+        ],
+        "hasSpace": [
+            "Seixal-da8d848baa4f9fbd:Room-567de0acb3454c7e",
+            "Seixal-da8d848baa4f9fbd:Room-74d91ca15f255a32",
+            "Seixal-da8d848baa4f9fbd:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Av. Qta da Atalaia nº 4, 3º Esq",
+            "addressLocality": "Seixal"
+        },
+        "area": 119,
+        "name": "Av. Qta da Atalaia nº 4, 3º Esq"
+    },
+    {
+        "id": "Seixal-e6fd375867ee071f",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-e6fd375867ee071f:Gateway-688AB501AA33",
+            "Seixal-e6fd375867ee071f:Gateway-688AB501AA33:Meter-688AB5004C0D:01",
+            "Seixal-e6fd375867ee071f:Gateway-688AB501AA33:Meter-688AB50328B5:01",
+            "Seixal-e6fd375867ee071f:Gateway-688AB501AA33:Meter-688AB50328B5:02",
+            "Seixal-e6fd375867ee071f:Gateway-688AB501AA33:Meter-688AB50328B5:03",
+            "Seixal-e6fd375867ee071f:Gateway-688AB501AA33:Meter-688AB50328B5:04"
+        ],
+        "hasSpace": [
+            "Seixal-e6fd375867ee071f:Room-3b7866a9226122fe",
+            "Seixal-e6fd375867ee071f:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua Marquês de Pombal lote 131 ",
+            "addressLocality": "Seixal"
+        },
+        "name": "Rua Marquês de Pombal lote 131 "
+    },
+    {
+        "id": "Seixal-ee9a0f4b0eb48bb5",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-ee9a0f4b0eb48bb5:Gateway-688AB501AE4D",
+            "Seixal-ee9a0f4b0eb48bb5:Gateway-688AB501AE4D:Meter-688AB502A09F:02",
+            "Seixal-ee9a0f4b0eb48bb5:Gateway-688AB501AE4D:Meter-688AB502A09F:03",
+            "Seixal-ee9a0f4b0eb48bb5:Gateway-688AB501AE4D:Meter-688AB502A09F:04"
+        ],
+        "hasSpace": [
+            "Seixal-ee9a0f4b0eb48bb5:Room-54019b3305fd9950",
+            "Seixal-ee9a0f4b0eb48bb5:Room-567de0acb3454c7e",
+            "Seixal-ee9a0f4b0eb48bb5:Room-617a97c1a336fd94",
+            "Seixal-ee9a0f4b0eb48bb5:Room-74d91ca15f255a32",
+            "Seixal-ee9a0f4b0eb48bb5:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua José Régio, 65, Vale Milhaços, 2855-465 Corroios",
+            "addressLocality": "Seixal"
+        },
+        "area": 232,
+        "name": "Rua José Régio, 65, Vale Milhaços, 2855-465 Corroios"
+    },
+    {
+        "id": "Seixal-f08e46fdcc6aa5e3",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-f08e46fdcc6aa5e3:Gateway-688AB501A30A",
+            "Seixal-f08e46fdcc6aa5e3:Gateway-688AB501A30A:Meter-688AB5029897:02",
+            "Seixal-f08e46fdcc6aa5e3:Gateway-688AB501A30A:Meter-688AB5029897:03",
+            "Seixal-f08e46fdcc6aa5e3:Gateway-688AB501A30A:Meter-688AB5029897:04"
+        ],
+        "hasSpace": [
+            "Seixal-f08e46fdcc6aa5e3:Room-567de0acb3454c7e",
+            "Seixal-f08e46fdcc6aa5e3:Room-74d91ca15f255a32",
+            "Seixal-f08e46fdcc6aa5e3:Room-9580da5f10ab15fe",
+            "Seixal-f08e46fdcc6aa5e3:Room-e7fec39df467b0cb"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Rua dos Lírios nº 49",
+            "addressLocality": "Seixal"
+        },
+        "name": "Rua dos Lírios nº 49"
+    },
+    {
+        "id": "Seixal-f45ceb8699a11ce6",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-f45ceb8699a11ce6:Gateway-688AB501AE1A",
+            "Seixal-f45ceb8699a11ce6:Gateway-688AB501AE1A:Meter-688AB50328AB:02",
+            "Seixal-f45ceb8699a11ce6:Gateway-688AB501AE1A:Meter-688AB50328AB:03",
+            "Seixal-f45ceb8699a11ce6:Gateway-688AB501AE1A:Meter-688AB50328AB:04"
+        ],
+        "hasSpace": [
+            "Seixal-f45ceb8699a11ce6:Room-567de0acb3454c7e",
+            "Seixal-f45ceb8699a11ce6:Room-8654374cb764ba4d",
+            "Seixal-f45ceb8699a11ce6:Room-9580da5f10ab15fe",
+            "Seixal-f45ceb8699a11ce6:Room-fef4aad09731983f"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "R Dias Coelho 17 Amora",
+            "addressLocality": "Seixal"
+        },
+        "name": "R Dias Coelho 17 Amora"
+    },
+    {
+        "id": "Seixal-f46a5157232d840a",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-f46a5157232d840a:Gateway-688AB5019938",
+            "Seixal-f46a5157232d840a:Gateway-688AB5019938:Meter-688AB502A0A9:02",
+            "Seixal-f46a5157232d840a:Gateway-688AB5019938:Meter-688AB502A0A9:03",
+            "Seixal-f46a5157232d840a:Gateway-688AB5019938:Meter-688AB502A0A9:04"
+        ],
+        "hasSpace": [
+            "Seixal-f46a5157232d840a:Room-567de0acb3454c7e",
+            "Seixal-f46a5157232d840a:Room-59c10f3e9ee3c894",
+            "Seixal-f46a5157232d840a:Room-74d91ca15f255a32",
+            "Seixal-f46a5157232d840a:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Travessa Estevão Gomes, nº3, 2855-496 Corroios",
+            "addressLocality": "Seixal"
+        },
+        "name": "Travessa Estevão Gomes, nº3, 2855-496 Corroios"
+    },
+    {
+        "id": "Seixal-f84f6f4716ca472f",
+        "type": "Building",
+        "category": "Residential",
+        "contains": [
+            "Seixal-f84f6f4716ca472f:Gateway-688AB5019A07",
+            "Seixal-f84f6f4716ca472f:Gateway-688AB5019A07:Meter-688AB50055E7:02"
+        ],
+        "hasSpace": [
+            "Seixal-f84f6f4716ca472f:Room-567de0acb3454c7e",
+            "Seixal-f84f6f4716ca472f:Room-74d91ca15f255a32",
+            "Seixal-f84f6f4716ca472f:Room-9580da5f10ab15fe"
+        ],
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "Av Movimento das Forças Armadas nº 61, 4ºF",
+            "addressLocality": "Seixal"
+        },
+        "area": 60,
+        "name": "Av Movimento das Forças Armadas nº 61, 4ºF"
+    },
+    {
+        "id": "Seixal-Worten",
+        "type": "Building",
+        "category": "Store",
+        "hasSpace": "Seixal-Worten:Entrance",
+        "address": {
+            "addressCountry": "Portugal",
+            "addressRegion": "Setúbal",
+            "streetAddress": "RioSul Shopping, Avenida Libertadores de Timor Loro Sae Loja A0.002 - Piso 0, 2840-293 Arrentela",
+            "addressLocality": "Seixal"
+        },
+        "name": "Worten Store Seixal"
+    }
+]

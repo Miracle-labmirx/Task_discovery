@@ -1,0 +1,3240 @@
+[
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom:Xtel-5051000089:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:14:19Z",
+        "dateObserved": "2024-10-01T12:09:47Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:00:16Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:04:11Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SpecificFanPower",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Fault detection"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "AfterHETemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtractionAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "IntakeAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-11T16:11:21Z",
+        "dateObserved": "2024-07-25T17:45:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationAverageHistorical1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T09:59:48Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationAverageHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Kitchen-Livingroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Kitchen-Livingroom:Xtel-5051000260:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:51:47Z",
+        "dateObserved": "2024-10-01T12:02:14Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:00:17Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bedroom:Xtel-5051000231:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:13:41Z",
+        "dateObserved": "2024-10-01T12:11:42Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:00:16Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance_SRI-Report-Update",
+        "type": "Task",
+        "description": "Monitors the building's graph and updates the SRI Report scores.",
+        "category": "Assessment-Instance",
+        "periodicity": "@weekly",
+        "requires": {
+            "SRI-Report": {
+                "id": "Aalborg-Office:SRI-Report",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-17T18:37:40Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A02",
+        "taskValue": 0,
+        "name": "Smart Readiness Indicator monitoring"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Thermal-Comfort-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-06-13T16:00:00Z",
+        "validTo": "2024-06-13T17:00:00Z",
+        "dateCreated": "2024-06-10T22:22:30Z",
+        "dateObserved": "2024-06-13T16:00:00Z",
+        "dateModified": "2024-06-13T17:00:24Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Hourly fanger thermal comfort report for room C4.3.24"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance_Heat-Exchanger-Efficiency",
+        "type": "Task",
+        "description": "Assessments: Assess the heat exchanger efficiency, takes as inputs KPI heat exchanger efficiency and rotary heat exchanger rotation speed, and outputs the heat exchanger efficiency for each difined timeinterval",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "KPI_res": {
+                "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Heat-Exchanger-Efficiency",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-23T17:28:41Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "scope": "daily"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S3-G-P-V01",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Occupation-Status",
+        "type": "Task",
+        "description": "Occupancy indicator (0 or 1).",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "estimate": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-8:KPI-Instance_Occupancy-Estimate",
+                "type": "Task"
+            }
+        },
+        "unit": "bool",
+        "validFrom": "2024-06-13T22:45:00Z",
+        "validTo": "2024-06-13T22:50:00Z",
+        "dateCreated": "2024-06-10T22:15:12Z",
+        "dateObserved": "2024-06-13T22:45:00Z",
+        "arguments": {
+            "arguments": {
+                "threshold": 1.0
+            }
+        },
+        "dateModified": "2024-06-13T22:56:14Z",
+        "taskId": "A13-K04-V01",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevAvg-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-08T15:56:31Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationAverageHistoricalInUse1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Thermal-Comfort-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "reports": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-12T13:00:00Z",
+        "validTo": "2024-08-12T14:00:00Z",
+        "dateCreated": "2024-06-21T09:13:14Z",
+        "dateObserved": "2024-08-12T13:00:00Z",
+        "dateModified": "2024-08-12T14:01:26Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Hourly fanger thermal comfort report for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom-Master:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom-Master:Xtel-5051000245:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-08-07T02:59:59Z",
+        "validTo": "2024-08-07T04:00:00Z",
+        "dateCreated": "2024-06-27T14:51:03Z",
+        "dateObserved": "2024-08-07T03:57:43Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "extreme"
+        },
+        "dateModified": "2024-08-07T04:07:35Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 3,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Kitchen-Livingroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Kitchen-Livingroom:Xtel-5051000260:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:13:53Z",
+        "dateObserved": "2024-10-01T12:02:14Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:06:03Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_SRI-Report-Update",
+        "type": "Task",
+        "description": "Monitors the building's graph and updates the SRI Report scores.",
+        "category": "Assessment-Instance",
+        "periodicity": "@weekly",
+        "requires": {
+            "SRI-Report": {
+                "id": "Lisbon-FCUL-Library:SRI-Report",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-17T18:37:56Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A02",
+        "taskValue": 0,
+        "name": "Smart Readiness Indicator monitoring"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecHeatUse-3",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AfterHETemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-08T15:46:08Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificHeatingEnergyUseHistorical",
+            "HDBscan_grid_max_points": 10000,
+            "HDBscan_grid_min_cluster_points": 5,
+            "HDBscan_min_points": 500,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 30
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom:Xtel-5051000240:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-24T18:15:19Z",
+        "dateObserved": "2024-10-01T13:10:25Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:00:34Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.361:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-4:Room-1.361:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:44:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T14:28:16Z",
+        "dateObserved": "2024-09-24T18:48:26Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-24T19:02:57Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 4, Room 1.361"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "ExtFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setvalue-Exhaust-Fan-Control-Signal",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-08T09:00:48Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "FD_ID": "SpecificFanPower1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Fault detection"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevMax",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:05:03Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationMaxHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "ExtFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setvalue-Exhaust-Fan-Control-Signal",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-06T15:13:52Z",
+        "dateObserved": "2024-07-25T17:50:00Z",
+        "arguments": {
+            "FD_ID": "SpecificFanPower1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Fault detection"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Report:Daily",
+        "type": "Task",
+        "description": "Daily C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "Classification": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-30T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-06-24T18:46:02Z",
+        "dateObserved": "2024-09-30T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:49Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Daily IAQ CO2 concentration report for Atrium Center Zone"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bedroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Right:Room_Bedroom:Xtel-5051000231:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:51:41Z",
+        "dateObserved": "2024-10-01T12:11:42Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:00:16Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 2,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation-Report",
+        "type": "Task",
+        "description": "A13 Occupancy assessment report.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "OccupationCount": {
+                "id": "Lisbon-FCUL-Library:KPI-Instance_Total-Occupancy",
+                "type": "Task"
+            },
+            "OccupationPercentage": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-11T22:12:59Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "warning_threshold": 0.8
+        },
+        "dateModified": "2024-07-22T15:26:26Z",
+        "taskId": "A13-A:OR-V01",
+        "taskValue": {
+            "occupation_estimate": 76.81913265306122,
+            "occupation_percentage": 0.30727653061224486,
+            "warning_threshold": 0.8
+        }
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevMax",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:04:34Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationMaxHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecElUse-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC_KOMF01:AHU_HT00-1_EM01:Sensor_Total-Load",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setvalue-Exhaust-Fan-Control-Signal",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-05T16:30:26Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificElectricityUseHistorical1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Thermal-Comfort-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-01T00:00:00Z",
+        "validTo": "2024-08-01T00:00:00Z",
+        "dateCreated": "2024-06-10T20:00:30Z",
+        "dateObserved": "2024-07-01T00:00:00Z",
+        "dateModified": "2024-08-20T00:34:37Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.6075388026607539,
+            "below_cat_3": 0.0,
+            "cat_2": 0.3924611973392461,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Monthly fanger thermal comfort report for FCUL Library"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Livingroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Livingroom:Xtel-5051000241:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-24T18:14:36Z",
+        "dateObserved": "2024-10-01T13:26:49Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:00:56Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-3",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-11T16:11:35Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationAverageHistorical2",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Occupation-Report",
+        "type": "Task",
+        "description": "A13 Occupancy assessment report.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "OccupationCount": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:KPI-Instance_Total-Occupancy",
+                "type": "Task"
+            },
+            "OccupationPercentage": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Occupation",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-20T22:47:01Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "warning_threshold": 0.8
+        },
+        "dateModified": "2024-07-22T15:19:55Z",
+        "taskId": "A13-A:OR-V01",
+        "taskValue": {
+            "occupation_estimate": 14.552448979591835,
+            "occupation_percentage": 0.05820979591836734,
+            "warning_threshold": 0.8
+        }
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom-Master:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom-Master:Xtel-5051000227:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:53:00Z",
+        "dateObserved": "2024-10-01T12:17:20Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:06:18Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Thermal-Comfort-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:00:00Z",
+        "validTo": "2024-07-22T16:00:00Z",
+        "dateCreated": "2024-06-10T23:06:31Z",
+        "dateObserved": "2024-07-22T15:00:00Z",
+        "dateModified": "2024-07-22T16:04:47Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Hourly fanger thermal comfort report for room C4.3.24"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Occupation",
+        "type": "Task",
+        "description": "A13 Occupancy assessment for the Atrium Center Zone.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "SpacialContext": {
+                "id": "Lisbon-FCUL-Library",
+                "type": "Building"
+            },
+            "TotalEstimate": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:KPI-Instance_Total-Occupancy",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-20T22:45:56Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "dateModified": "2024-07-22T15:19:20Z",
+        "taskId": "A13-V01",
+        "taskValue": 0.05820979591836734,
+        "name": "Occupancy estimate for Atrium Center zone."
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation-Status",
+        "type": "Task",
+        "description": "Occupancy indicator (0 or 1).",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "estimate": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation",
+                "type": "Task"
+            }
+        },
+        "unit": "bool",
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-23T10:45:25Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "threshold": 0.02
+        },
+        "dateModified": "2024-07-22T15:20:06Z",
+        "taskId": "A13-K04-V01",
+        "taskValue": 1
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Kitchen-Livingroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Kitchen-Livingroom:Xtel-5051000249:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-08-11T22:59:59Z",
+        "validTo": "2024-08-12T00:00:00Z",
+        "dateCreated": "2024-06-24T18:15:04Z",
+        "dateObserved": "2024-08-11T23:59:38Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-08-12T00:18:31Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Kitchen-Livingroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Kitchen-Livingroom:Xtel-5051000249:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-08-11T19:59:59Z",
+        "validTo": "2024-08-11T21:00:00Z",
+        "dateCreated": "2024-06-27T14:52:37Z",
+        "dateObserved": "2024-08-11T20:59:38Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-08-11T21:17:25Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 2,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Monthly",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every month it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Monthly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-01T00:00:00Z",
+        "validTo": "2024-09-01T00:00:00Z",
+        "dateCreated": "2023-11-16T13:29:23Z",
+        "dateObserved": "2024-08-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:16:52Z",
+        "taskId": "A01",
+        "taskValue": {
+            "Max": 32.5625,
+            "Med": 10.8594,
+            "Min": 0,
+            "Q1": 6.5391,
+            "Q3": 17.2969,
+            "result": 7.531888888888889
+        },
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.365:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-4:Room-1.365:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:44:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T15:02:50Z",
+        "dateObserved": "2024-09-24T18:48:08Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-24T19:04:24Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 4, Room 1.365"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Report:Daily",
+        "type": "Task",
+        "description": "Daily Relative Humidity concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "Classification": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-29T00:00:00Z",
+        "validTo": "2024-09-30T00:00:00Z",
+        "dateCreated": "2024-06-27T16:47:55Z",
+        "dateObserved": "2024-09-29T00:00:00Z",
+        "dateModified": "2024-09-30T00:00:33Z",
+        "taskId": "A12-S-G3-P-V02",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Daily IAQ RH concentration report for Atrium Center Zone"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Thermal-Comfort-Report:Daily",
+        "type": "Task",
+        "description": "Daily thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-06-13T00:00:00Z",
+        "validTo": "2024-06-14T00:00:00Z",
+        "dateCreated": "2024-06-10T22:22:57Z",
+        "dateObserved": "2024-06-13T00:00:00Z",
+        "dateModified": "2024-06-14T00:00:13Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Daily fanger thermal comfort report for room C4.3.24"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecElUse-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC_KOMF01:AHU_HT00-1_EM01:Sensor_Total-Load",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-External",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-05T16:26:59Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificElectricityUseHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T15:00:00Z",
+        "validTo": "2024-10-01T16:00:00Z",
+        "dateCreated": "2024-06-24T18:46:12Z",
+        "dateObserved": "2024-10-01T15:00:00Z",
+        "dateModified": "2024-10-01T16:00:46Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Atrium Center Zone"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom-Master:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom-Master:Xtel-5051000208:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:52:11Z",
+        "dateObserved": "2024-10-01T12:20:20Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:09Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom:Xtel-5051000089:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:52:07Z",
+        "dateObserved": "2024-10-01T12:09:47Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:00:29Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 2,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.367:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-4:Room-1.367:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:44:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T15:01:42Z",
+        "dateObserved": "2024-09-24T18:49:29Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-24T19:05:22Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 4, Room 1.367"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:Assessment-Instance_Efficiency-Fault-Detection:Monthly",
+        "type": "Task",
+        "description": "Monthly assessmentfor the efficiency fault detection (FD) of a boiler.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "EfficiencyFactor": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Efficiency-Factor:Monthly",
+                "type": "Task"
+            },
+            "RefEfficiencyFactor": {
+                "id": "Milan:Reference-Value:Reference-Efficiency-Factor",
+                "type": "External"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-06T15:11:03Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-S2-G1-F-V01",
+        "taskValue": 0,
+        "name": "Monthly Boiler assessment for Efficiency Fault Detection"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevAvg-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "requires": {
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-08T09:06:39Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationAverageHistoricalInUse1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Floor-3:Room-1.257:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-3:Room-1.257:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:59:59Z",
+        "validTo": "2024-09-24T19:15:00Z",
+        "dateCreated": "2024-08-05T15:01:00Z",
+        "dateObserved": "2024-09-24T18:59:59Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-27T09:57:31Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 3, Room 1.257"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:VirtualSensor-Instance_Average-CO2",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T16:34:59Z",
+        "validTo": "2024-10-01T16:40:00Z",
+        "dateCreated": "2024-06-24T18:45:00Z",
+        "dateObserved": "2024-10-01T16:38:00Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T16:41:02Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Atrium Center Zone"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T12:00:00Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:19:57Z",
+        "dateObserved": "2024-10-01T12:00:00Z",
+        "dateModified": "2024-10-01T13:05:35Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Yearly",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every year it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Yearly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-16T13:30:09Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A01",
+        "taskValue": 0,
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Livingroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Livingroom:Xtel-5051000232:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:15:32Z",
+        "dateObserved": "2024-10-01T12:29:33Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:16Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly Relative Humidity concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "Classification": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-01T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-06-27T16:48:04Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:32Z",
+        "taskId": "A12-S-G3-P-V02",
+        "taskValue": {
+            "1": 0.30419741697416974,
+            "2": 0.5200645756457565,
+            "3": 0.16920356703567035,
+            "4": 0.006534440344403444
+        },
+        "name": "Monthly IAQ RH concentration report for Atrium Center Zone"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "Classification": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-01T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-06-24T18:45:52Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:18Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Monthly IAQ CO2 concentration report for Atrium Center Zone"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation",
+        "type": "Task",
+        "description": "A13 Occupancy assessment.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "SpacialContext": {
+                "id": "Lisbon-FCUL-Library",
+                "type": "Building"
+            },
+            "TotalEstimate": {
+                "id": "Lisbon-FCUL-Library:KPI-Instance_Total-Occupancy",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-04-12T16:55:58Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "dateModified": "2024-07-22T15:19:54Z",
+        "taskId": "A13-V01",
+        "taskValue": 0.30727653061224486
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Livingroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Livingroom:Xtel-5051000251:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T10:59:59Z",
+        "validTo": "2024-10-01T12:00:00Z",
+        "dateCreated": "2024-06-27T14:51:13Z",
+        "dateObserved": "2024-10-01T11:02:05Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T12:00:12Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:Assessment-Instance_Efficiency-Fault-Detection:Yearly",
+        "type": "Task",
+        "description": "Yearly assessmentfor the efficiency fault detection (FD) of a boiler.",
+        "category": "Assessment-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "EfficiencyFactor": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Efficiency-Factor:Yearly",
+                "type": "Task"
+            },
+            "RefEfficiencyFactor": {
+                "id": "Milan:Reference-Value:Reference-Efficiency-Factor",
+                "type": "External"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-06T15:11:28Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-S2-G1-F-V01",
+        "taskValue": 0,
+        "name": "Yearly Boiler assessment for Efficiency Fault Detection"
+    },
+    {
+        "id": "Milan-MultiApartment-2:Stair-5:Boiler:Assessment-Instance_Efficiency-Performance:Monthly",
+        "type": "Task",
+        "description": "Monthly assessment for the efficiency performance of a boiler.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "EfficiencyFactor": {
+                "id": "Milan-MultiApartment-2:Stair-5:Boiler:KPI-Instance_Efficiency-Factor:Monthly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-06T21:21:10Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A22-S2-G1-P-V01",
+        "taskValue": 0,
+        "name": "Monthly assessment for Boiler Performance"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Livingroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Livingroom:Xtel-5051000241:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-27T14:52:21Z",
+        "dateObserved": "2024-10-01T13:26:49Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:01:30Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bedroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bedroom:Xtel-5051000250:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T10:59:59Z",
+        "validTo": "2024-10-01T12:00:00Z",
+        "dateCreated": "2024-06-27T14:52:29Z",
+        "dateObserved": "2024-10-01T11:41:44Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T12:00:46Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Thermal-Comfort-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "reports": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-01T00:00:00Z",
+        "validTo": "2024-09-01T00:00:00Z",
+        "dateCreated": "2024-06-21T09:12:48Z",
+        "dateObserved": "2024-08-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:07:46Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 0.98,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.02
+        },
+        "name": "Monthly fanger thermal comfort report for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Report:Daily",
+        "type": "Task",
+        "description": "Daily C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-30T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-06-24T18:22:19Z",
+        "dateObserved": "2024-09-30T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:43Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Daily IAQ CO2 concentration report"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Thermal-Comfort-Report:Daily",
+        "type": "Task",
+        "description": "Daily thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T00:00:00Z",
+        "dateCreated": "2024-06-10T20:00:09Z",
+        "dateObserved": "2024-07-22T00:00:00Z",
+        "dateModified": "2024-07-23T00:00:31Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.6875,
+            "below_cat_3": 0.0,
+            "cat_2": 0.3125,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Daily fanger thermal comfort report for FCUL Library"
+    },
+    {
+        "id": "Aalborg-Office:Floor-3:Room-1.257:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-3:Room-1.257:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:39:58Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:00:58Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 3, Room 1.257"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom-Master:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom-Master:Xtel-5051000245:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-08-07T02:59:59Z",
+        "validTo": "2024-08-07T04:00:00Z",
+        "dateCreated": "2024-06-24T18:13:12Z",
+        "dateObserved": "2024-08-07T03:57:43Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-08-07T04:07:46Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Thermal-Comfort-Report:Daily",
+        "type": "Task",
+        "description": "Daily thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "reports": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-10T00:00:00Z",
+        "validTo": "2024-08-11T00:00:00Z",
+        "dateCreated": "2024-06-21T09:13:01Z",
+        "dateObserved": "2024-08-10T00:00:00Z",
+        "dateModified": "2024-08-11T00:00:12Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Daily fanger thermal comfort report for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.365:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-4:Room-1.365:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:38:50Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:01:06Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 4, Room 1.365"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.361:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-4:Room-1.361:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:39:15Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:00:54Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 4, Room 1.361"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Fanger-Comfort-Classification",
+        "type": "Task",
+        "description": "Thermal comfort category based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "occupation_hours": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Occupation-Status",
+                "type": "Task"
+            },
+            "temp_dev": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Sensor_Temperature",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-06-13T16:50:00Z",
+        "validTo": "2024-06-13T16:55:00Z",
+        "dateCreated": "2024-06-10T22:19:29Z",
+        "dateObserved": "2024-06-13T16:50:00Z",
+        "arguments": {
+            "above_cat_3": 26,
+            "below_cat_3": 19,
+            "cat_2": 24,
+            "low_cat_3": 20,
+            "upper_cat_3": 24
+        },
+        "dateModified": "2024-06-13T17:04:43Z",
+        "taskId": "A11-A:FCC-V01",
+        "taskValue": "cat_2",
+        "name": "Fanger thermal comfort category result for C4.3.24"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Kitchen:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Kitchen:Xtel-5051000237:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-24T18:14:30Z",
+        "dateObserved": "2024-10-01T13:17:08Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:01:20Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-01T00:00:00Z",
+        "validTo": "2024-10-01T00:00:00Z",
+        "dateCreated": "2024-06-24T18:22:32Z",
+        "dateObserved": "2024-09-01T00:00:00Z",
+        "dateModified": "2024-10-01T00:00:15Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Monthly IAQ CO2 concentration report"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly Relative Humidity concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T15:00:00Z",
+        "validTo": "2024-10-01T16:00:00Z",
+        "dateCreated": "2024-06-27T16:47:46Z",
+        "dateObserved": "2024-10-01T15:00:00Z",
+        "dateModified": "2024-10-01T16:00:47Z",
+        "taskId": "A12-S-G3-P-V02",
+        "taskValue": {
+            "1": 0.0,
+            "2": 0.0,
+            "3": 1.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ RH concentration report for Atrium Center Zone"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Xtel-5051000039:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:50:57Z",
+        "dateObserved": "2024-10-01T12:35:21Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:29Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aspern-Office:Assessment-Instance_SRI-Report-Update",
+        "type": "Task",
+        "description": "Monitors the building's graph and updates the SRI Report scores.",
+        "category": "Assessment-Instance",
+        "periodicity": "@weekly",
+        "requires": {
+            "SRI-Report": {
+                "id": "Aspern-Office:SRI-Report",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-17T18:38:09Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A02",
+        "taskValue": 0,
+        "name": "Smart Readiness Indicator monitoring"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Occupation-Status",
+        "type": "Task",
+        "description": "Occupancy indicator (0 or 1).",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "estimate": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:KPI-Instance_Total-Occupancy",
+                "type": "Task"
+            }
+        },
+        "unit": "bool",
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-10T23:00:32Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "threshold": 1.0
+        },
+        "dateModified": "2024-07-22T15:19:43Z",
+        "taskId": "A13-K04-V01",
+        "taskValue": 1
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom-Master:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Bedroom-Master:Xtel-5051000208:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:14:22Z",
+        "dateObserved": "2024-10-01T12:20:20Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:23Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Thermal-Comfort-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Floor-2:Room-Office_3_24:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-06-01T00:00:00Z",
+        "validTo": "2024-07-01T00:00:00Z",
+        "dateCreated": "2024-06-10T22:22:45Z",
+        "dateObserved": "2024-06-01T00:00:00Z",
+        "dateModified": "2024-07-31T00:31:28Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.014285714285714285,
+            "cat_2": 0.9857142857142858,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Monthly fanger thermal comfort report for room C4.3.24"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Kitchen:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Kitchen:Xtel-5051000244:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-27T14:51:18Z",
+        "dateObserved": "2024-10-01T13:01:57Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:00:47Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 2,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "Assessment for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "Humidity": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:VirtualSensor-Instance_Average-Humidity",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-10-01T16:34:59Z",
+        "validTo": "2024-10-01T16:40:00Z",
+        "dateCreated": "2024-06-27T15:29:27Z",
+        "dateObserved": "2024-10-01T16:38:00Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T16:41:02Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 3,
+        "name": "IAQ RH concentration assessment for Atrium Center Zone"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Thermal-Comfort-Report:Daily",
+        "type": "Task",
+        "description": "Daily thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T00:00:00Z",
+        "validTo": "2024-07-23T00:00:00Z",
+        "dateCreated": "2024-06-10T23:06:21Z",
+        "dateObserved": "2024-07-22T00:00:00Z",
+        "dateModified": "2024-07-23T00:00:35Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.07692307692307693,
+            "below_cat_3": 0.0,
+            "cat_2": 0.9230769230769231,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Daily fanger thermal comfort report for room C4.3.24"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Livingroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Livingroom:Xtel-5051000232:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:53:03Z",
+        "dateObserved": "2024-10-01T12:29:33Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:09Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom:Xtel-5051000240:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-27T14:52:56Z",
+        "dateObserved": "2024-10-01T13:10:25Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:00:42Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+        "type": "Task",
+        "description": "Thermal comfort category based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "occupation_hours": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Sensor_Occupancy",
+                "type": "Device"
+            },
+            "temp_dev": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Sensor_Temperature",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-08-12T13:15:00Z",
+        "validTo": "2024-08-12T13:30:00Z",
+        "dateCreated": "2024-06-21T09:10:14Z",
+        "dateObserved": "2024-08-12T13:15:00Z",
+        "arguments": {
+            "above_cat_3": 26,
+            "below_cat_3": 19,
+            "cat_2": 24,
+            "low_cat_3": 20,
+            "upper_cat_3": 25
+        },
+        "dateModified": "2024-08-12T13:35:25Z",
+        "taskId": "A11-A:FCC-V01",
+        "taskValue": "cat_2",
+        "name": "Fanger thermal comfort category result for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.367:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-4:Room-1.367:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:39:35Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:01:01Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 4, Room 1.367"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom-Master:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Bedroom-Master:Xtel-5051000227:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:15:22Z",
+        "dateObserved": "2024-10-01T12:17:20Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:29Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Livingroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Livingroom:Xtel-5051000251:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T10:59:59Z",
+        "validTo": "2024-10-01T12:00:00Z",
+        "dateCreated": "2024-06-24T18:13:28Z",
+        "dateObserved": "2024-10-01T11:02:05Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T12:00:23Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Fanger-Comfort-Classification",
+        "type": "Task",
+        "description": "Thermal comfort category based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "occupation_hours": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Occupation-Status",
+                "type": "Task"
+            },
+            "temp_dev": {
+                "id": "Lisbon-FCUL-Library:Atrium:VirtualSensor-Instance_Average-Temperature",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-10T14:00:43Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "above_cat_3": 26,
+            "below_cat_3": 19,
+            "cat_2": 24,
+            "low_cat_3": 20,
+            "upper_cat_3": 24
+        },
+        "dateModified": "2024-07-22T15:26:20Z",
+        "taskId": "A11-A:FCC-V01",
+        "taskValue": "above_cat_3",
+        "name": "Fanger thermal comfort category result for FCUL Library"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Fanger-Comfort-Classification",
+        "type": "Task",
+        "description": "Thermal comfort category based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "occupation_hours": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Occupation-Status",
+                "type": "Task"
+            },
+            "temp_dev": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:VirtualSensor-Instance_Average-Temperature",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:10:00Z",
+        "validTo": "2024-07-22T15:15:00Z",
+        "dateCreated": "2024-06-10T23:05:43Z",
+        "dateObserved": "2024-07-22T15:10:00Z",
+        "arguments": {
+            "above_cat_3": 26,
+            "below_cat_3": 19,
+            "cat_2": 24,
+            "low_cat_3": 20,
+            "upper_cat_3": 24
+        },
+        "dateModified": "2024-07-22T15:26:18Z",
+        "taskId": "A11-A:FCC-V01",
+        "taskValue": "cat_2",
+        "name": "Fanger thermal comfort category result for Atrium Center"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Assessment-Instance_Thermal-Comfort-Report:Hourly",
+        "type": "Task",
+        "description": "Thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-22T15:00:00Z",
+        "validTo": "2024-07-22T16:00:00Z",
+        "dateCreated": "2024-06-10T19:57:06Z",
+        "dateObserved": "2024-07-22T15:00:00Z",
+        "dateModified": "2024-07-22T16:01:08Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 1.0,
+            "below_cat_3": 0.0,
+            "cat_2": 0.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Fanger thermal comfort report for FCUL Library"
+    },
+    {
+        "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Thermal-Comfort-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "reports": {
+                "id": "Lisbon-FCUL-Library:Floor-1:Atrium_Center:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-07-01T00:00:00Z",
+        "validTo": "2024-08-01T00:00:00Z",
+        "dateCreated": "2024-06-10T23:06:58Z",
+        "dateObserved": "2024-07-01T00:00:00Z",
+        "dateModified": "2024-08-20T00:34:40Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.21529745042492918,
+            "below_cat_3": 0.0,
+            "cat_2": 0.7847025495750708,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Monthly fanger thermal comfort report for room C4.3.24"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Kitchen:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Kitchen:Xtel-5051000244:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-24T18:13:24Z",
+        "dateObserved": "2024-10-01T13:16:57Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:00:30Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Kitchen:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Left:Room_Kitchen:Xtel-5051000237:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T12:59:59Z",
+        "validTo": "2024-10-01T14:00:00Z",
+        "dateCreated": "2024-06-27T14:52:17Z",
+        "dateObserved": "2024-10-01T13:17:08Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T14:00:51Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Kitchen:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Kitchen:Xtel-5051000248:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:15:28Z",
+        "dateObserved": "2024-10-01T12:17:16Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:02:01Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Kitchen:Assessment-Instance_IAQ-RH-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the Relative humidity, takes the Relative humidity for a defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Humidity": {
+                "id": "Aalborg-Residential:Stair-11:Floor-2:Apartment-Left:Room_Kitchen:Xtel-5051000248:Sensor_Humidity",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-27T14:53:08Z",
+        "dateObserved": "2024-10-01T12:17:16Z",
+        "arguments": {
+            "categories": {
+                "low_cat_1": 30,
+                "low_cat_2": 25,
+                "low_cat_3": 20,
+                "upper_cat_1": 50,
+                "upper_cat_2": 60,
+                "upper_cat_3": 70
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:01:45Z",
+        "taskId": "A12-KIE6-V01",
+        "taskValue": 1,
+        "name": "IAQ RH concentration"
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-1:Apartment-Right:Room_Bedroom:Xtel-5051000250:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T10:59:59Z",
+        "validTo": "2024-10-01T12:00:00Z",
+        "dateCreated": "2024-06-24T18:14:59Z",
+        "dateObserved": "2024-10-01T11:41:44Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T12:01:07Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecHeatUse-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-External",
+                "type": "Device"
+            },
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-07T23:50:22Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificHeatingEnergyUseHistorical2",
+            "HDBscan_grid_max_points": 10000,
+            "HDBscan_grid_min_cluster_points": 5,
+            "HDBscan_min_points": 500,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 30
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Daily",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every day it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Daily",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-23T00:00:00Z",
+        "validTo": "2024-09-24T00:00:00Z",
+        "dateCreated": "2023-11-16T13:29:42Z",
+        "dateObserved": "2024-09-23T00:00:00Z",
+        "dateModified": "2024-09-24T00:10:39Z",
+        "taskId": "A01",
+        "taskValue": {
+            "Max": 0.9727,
+            "Med": 0.3097,
+            "Min": 0,
+            "Q1": 0.1888,
+            "Q3": 0.5024,
+            "result": 0.27516666666666667
+        },
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Residential:Stair-11:Floor-0:Apartment-Left:Room_Bedroom:Xtel-5051000039:Sensor_CO2",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "CO2",
+                "unit": "59"
+            }
+        },
+        "validFrom": "2024-10-01T11:59:59Z",
+        "validTo": "2024-10-01T13:00:00Z",
+        "dateCreated": "2024-06-24T18:13:06Z",
+        "dateObserved": "2024-10-01T12:35:21Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-10-01T13:02:38Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Hourly",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every hour it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Hourly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2023-11-11T23:15:36Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:08:17Z",
+        "taskId": "A01",
+        "taskValue": {
+            "Max": 0.0472,
+            "Med": 0.0155,
+            "Min": 0,
+            "Q1": 0.0097,
+            "Q3": 0.0247,
+            "result": 0.007611111111111111
+        },
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecHeatUse-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AfterHETemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtractionAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "IntakeAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-07T23:50:06Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificHeatingEnergyUseHistorical1",
+            "HDBscan_grid_max_points": 10000,
+            "HDBscan_grid_min_cluster_points": 5,
+            "HDBscan_min_points": 500,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 30
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    }
+]

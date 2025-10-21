@@ -1,0 +1,2414 @@
+[
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.354:KPI-Instance:Average-Temperature-Deviation",
+        "type": "Task",
+        "description": "Percentage of the of occupied hours (those during which the building is occupied), in which the operative temperature is outside a specified range, calculated according to the Fanger thermal comfort model.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "tempSensor": {
+                "id": "Aalborg-Office:Floor-4:Room-1.354:Sensor_Temperature",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T17:59:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-03-27T16:23:58Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "arguments": {
+            "above_thresh": 26,
+            "below_thresh": 20
+        },
+        "dateModified": "2024-09-24T19:01:09Z",
+        "taskId": "A11-K:01-V01",
+        "taskValue": 0.0,
+        "name": "Sensor measuring temperature in Room-1.354"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:04:11Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SpecificFanPower",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Fault detection"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "AfterHETemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtractionAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "IntakeAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-11T16:11:21Z",
+        "dateObserved": "2024-07-25T17:45:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationAverageHistorical1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower-1",
+        "type": "Task",
+        "periodicity": "paused"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T09:59:48Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationAverageHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance_SRI-Report-Update",
+        "type": "Task",
+        "description": "Monitors the building's graph and updates the SRI Report scores.",
+        "category": "Assessment-Instance",
+        "periodicity": "@weekly",
+        "requires": {
+            "SRI-Report": {
+                "id": "Aalborg-Office:SRI-Report",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-17T18:37:40Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A02",
+        "taskValue": 0,
+        "name": "Smart Readiness Indicator monitoring"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance_Heat-Exchanger-Efficiency",
+        "type": "Task",
+        "description": "Assessments: Assess the heat exchanger efficiency, takes as inputs KPI heat exchanger efficiency and rotary heat exchanger rotation speed, and outputs the heat exchanger efficiency for each difined timeinterval",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "KPI_res": {
+                "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Heat-Exchanger-Efficiency",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-23T17:28:41Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "scope": "daily"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S3-G-P-V01",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:33Z",
+        "taskValue": 0.6674926812171635
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevAvg-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-08T15:56:31Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationAverageHistoricalInUse1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Cooling-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the cooling energy use in the AHU, takes as input a timeseries of cooling energy use and outputs the sum cooling energy use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-08-31T17:55:22Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:EP200-V02",
+        "taskValue": 0.0,
+        "name": "Cooling Energy Use"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Thermal-Comfort-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "reports": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-12T13:00:00Z",
+        "validTo": "2024-08-12T14:00:00Z",
+        "dateCreated": "2024-06-21T09:13:14Z",
+        "dateObserved": "2024-08-12T13:00:00Z",
+        "dateModified": "2024-08-12T14:01:26Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Hourly fanger thermal comfort report for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Average-Supply-Pressure-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the average supply pressure deviation in the AHU, takes as input a timeseries of supply pressure and supply pressure setpoints and outputs the average supply pressure deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Air-Pressure-Supply",
+                "unit": "PAL"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Air-Pressure-Supply",
+                "unit": "PAL"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-08-31T17:59:43Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC000-V01",
+        "taskValue": 43.71521767326522,
+        "name": "Average Supply Pressure Deviation"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:40Z",
+        "taskValue": 0.6771653543307086
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:41Z",
+        "taskValue": 0.6190476190476191
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-1",
+        "type": "Task",
+        "periodicity": "paused"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Monitoring-Control",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:51Z",
+        "taskValue": 0.6666666666666667
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecHeatUse-3",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AfterHETemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-08T15:46:08Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificHeatingEnergyUseHistorical",
+            "HDBscan_grid_max_points": 10000,
+            "HDBscan_grid_min_cluster_points": 5,
+            "HDBscan_min_points": 500,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 30
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.361:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-4:Room-1.361:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:44:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T14:28:16Z",
+        "dateObserved": "2024-09-24T18:48:26Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-24T19:02:57Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 4, Room 1.361"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "ExtFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setvalue-Exhaust-Fan-Control-Signal",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-08T09:00:48Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "FD_ID": "SpecificFanPower1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Fault detection"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevMax",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:05:03Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationMaxHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecFanPower-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "ExtFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setvalue-Exhaust-Fan-Control-Signal",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-06T15:13:52Z",
+        "dateObserved": "2024-07-25T17:50:00Z",
+        "arguments": {
+            "FD_ID": "SpecificFanPower1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Fault detection"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Daily",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "2024-09-23T00:00:00Z",
+        "validTo": "2024-09-24T00:00:00Z",
+        "dateCreated": "2023-11-15T23:13:12Z",
+        "dateObserved": "2024-09-23T00:00:00Z",
+        "dateModified": "2024-09-24T00:08:08Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0.27516666666666667,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevMax",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:04:34Z",
+        "dateObserved": "2024-07-25T16:50:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationMaxHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Flexibility-Storage",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:35Z",
+        "taskValue": 0.2297852372165252
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Domestic-Hot-Water",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:48Z",
+        "taskValue": 0.4874679629447715
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Dynamic-Building-Envelope",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:54Z",
+        "taskValue": 0.8
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Dynamic-Building-Envelope",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:56Z",
+        "taskValue": 0.3961158192090395
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Flexibility-Storage:Cooling",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Electric-Vehicle-Charging",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Heating",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:55Z",
+        "taskValue": 0.375
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Heating",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:31Z",
+        "taskValue": 0.5
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Ventilation",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:10:32Z",
+        "taskValue": 1.0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Dynamic-Building-Envelope",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:57Z",
+        "taskValue": 0.4
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Cooling",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Ventilation",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:09:44Z",
+        "taskValue": 0.8571428571428571
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecElUse-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC_KOMF01:AHU_HT00-1_EM01:Sensor_Total-Load",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setvalue-Exhaust-Fan-Control-Signal",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-05T16:30:26Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificElectricityUseHistorical1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Lighting",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:09:51Z",
+        "taskValue": 1.0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Electricity",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:10:43Z",
+        "taskValue": 0.0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Electric-Vehicle-Charging",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Electricity",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:09:47Z",
+        "taskValue": 0.0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Monitoring-Control",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:16Z",
+        "taskValue": 0.625
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Monitoring-Control",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:28Z",
+        "taskValue": 0.5882352941176471
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Domestic-Hot-Water",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Cooling",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Lighting",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:10:35Z",
+        "taskValue": 0.8
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Electricity",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Comfort:Electric-Vehicle-Charging",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevAvg-3",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-11T16:11:35Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SupplyTemperatureDeviationAverageHistorical2",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Cooling",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Electricity",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:57Z",
+        "taskValue": 0.15472042292393245
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Heating",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:10:25Z",
+        "taskValue": 0.5
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Domestic-Hot-Water",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:10Z",
+        "taskValue": 0.0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Class",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": "D"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Cooling",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Lighting",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:11:33Z",
+        "taskValue": 0.8
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Electric-Vehicle-Charging",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2022-11-22T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskValue": 0
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Heat-Exchanger-Efficiency",
+        "type": "Task",
+        "description": "KPI definition for the heat exchanger efficiency in the rotary heat exchanger, takes as input a timeseries of supply and extraction flow and air temperature and outputs the the deviation between the real and theoratical possiple heat exchanger efficiency over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ExtFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "SupTempSP": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "TempAfterHE": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "TempIntake": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-25T18:59:54Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "c_p": 1006,
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC130-V01",
+        "taskValue": {
+            "Max": 8.903135575722963,
+            "current": 9.96888691374358,
+            "deviation": -1.0657513380206165
+        },
+        "name": "Heat Exchanger Efficiency"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Monthly",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every month it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Monthly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-01T00:00:00Z",
+        "validTo": "2024-09-01T00:00:00Z",
+        "dateCreated": "2023-11-16T13:29:23Z",
+        "dateObserved": "2024-08-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:16:52Z",
+        "taskId": "A01",
+        "taskValue": {
+            "Max": 32.5625,
+            "Med": 10.8594,
+            "Min": 0,
+            "Q1": 6.5391,
+            "Q3": 17.2969,
+            "result": 7.531888888888889
+        },
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.365:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-4:Room-1.365:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:44:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T15:02:50Z",
+        "dateObserved": "2024-09-24T18:48:08Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-24T19:04:24Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 4, Room 1.365"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Heating-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the heating peak power in the AHU, takes as input a timeseries of electrical energy use for heating device and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "HeatUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Power-Consumed-Heating-Coil",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-12T17:29:33Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:BP10-V02",
+        "taskValue": 0,
+        "name": "Heating Peak Power"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Hourly",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2023-06-22T23:39:37Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:06:44Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0.007611111111111111,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecElUse-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC_KOMF01:AHU_HT00-1_EM01:Sensor_Total-Load",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-External",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-03-05T16:26:59Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificElectricityUseHistorical",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:AHU_KOMF01:Service-Instance_Heat-Exchanger-Efficiency-Degradation",
+        "type": "Task",
+        "description": "Heat Exchanger Efficiency Degradation of the AHU",
+        "category": "Service-Instance",
+        "periodicity": "0 0 * * 7",
+        "requires": {
+            "FlowExh": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "FlowSup": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "HCOpening": {
+                "id": "Aalborg-Office:HVAC:Actuator_Position-Heating-Coil-Motorvalve",
+                "type": "Device"
+            },
+            "HERotSignal": {
+                "id": "Aalborg-Office:HVAC:Sensor_Rotation-Speed",
+                "type": "Device"
+            },
+            "TempExh": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Temperature",
+                "type": "Device"
+            },
+            "TempExt": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "TempIntake": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "TempSup": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "TempSupSP": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-09-13T22:18:41Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "c_p": 1006,
+            "historical_time": "1 year",
+            "resample_time": "5 minutes",
+            "startup_time": "10 minutes",
+            "step_size_degrees": "2"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "S34-C-G-S04",
+        "taskValue": 0,
+        "name": "Heat Exchanger Efficiency Degradation"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.367:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-4:Room-1.367:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:44:59Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T15:01:42Z",
+        "dateObserved": "2024-09-24T18:49:29Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-24T19:05:22Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 4, Room 1.367"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Yearly",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-15T23:13:49Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 0,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Dynamic-Building-Envelope",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:10:04Z",
+        "taskValue": 0.5
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevAvg-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "requires": {
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupFanSignal": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Supply-Fan-Control",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-08T09:06:39Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationAverageHistoricalInUse1",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Floor-3:Room-1.257:Assessment-Instance_IAQ-CO2-Classification",
+        "type": "Task",
+        "description": "KPI definition for the indoor air quality based on the CO2 concentration, takes the CO2 concentration for at defined time periode as input, and determine what category the period are in.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "CO2": {
+                "id": "Aalborg-Office:Floor-3:Room-1.257:Sensor_CO2",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-09-24T18:59:59Z",
+        "validTo": "2024-09-24T19:15:00Z",
+        "dateCreated": "2024-08-05T15:01:00Z",
+        "dateObserved": "2024-09-24T18:59:59Z",
+        "arguments": {
+            "categories": {
+                "cat_1": 550,
+                "cat_2": 800,
+                "cat_3": 1350,
+                "cat_4": 1350,
+                "outside": 450
+            },
+            "option": "mean"
+        },
+        "dateModified": "2024-09-27T09:57:31Z",
+        "taskId": "A12-KIE5-V01",
+        "taskValue": 1,
+        "name": "IAQ CO2 concentration category for Floor 3, Room 1.257"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Energy-Efficiency:Domestic-Hot-Water",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:10:48Z",
+        "taskValue": 1.0
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Average-Supply-Temperature-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the average supply temperature deviation in the AHU, takes as input a timeseries of supply temperature and supply temperature setpoints and outputs the average supply temperature deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Supply-Fan-Flow",
+                "unit": "MQH"
+            },
+            "SupTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Temperature-Air-Supply",
+                "unit": "CEL"
+            },
+            "SupTempSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device",
+                "category": "Actuator",
+                "controlsProperty": "Setpoint-Air-Pressure-Supply",
+                "unit": "CEL"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-15T15:18:59Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC000-V03",
+        "taskValue": 0,
+        "name": "Average Supply Temperature Deviation"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Yearly",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every year it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@yearly",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Yearly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-16T13:30:09Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A01",
+        "taskValue": 0,
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevAvg",
+        "type": "Task",
+        "periodicity": "paused"
+    },
+    {
+        "id": "Aalborg-Office:SRI-Report:Convenience:Ventilation",
+        "type": "Task",
+        "category": "SRI-Report",
+        "dateCreated": "2024-09-17T12:04:28Z",
+        "dateObserved": "2024-09-18T22:09:44.664101Z",
+        "dateModified": "2024-09-18T22:12:18Z",
+        "taskValue": 1.0
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevMax",
+        "type": "Task",
+        "periodicity": "paused"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupTempDevMax",
+        "type": "Task",
+        "periodicity": "paused"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Heat-Exchanger-Efficiency",
+        "type": "Task",
+        "description": "KPI definition for the heat exchanger efficiency in the rotary heat exchanger, takes as input a timeseries of supply and extraction flow and air temperature and outputs the the deviation between the real and theoratical possiple heat exchanger efficiency over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "FlowExh": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "FlowSup": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "HCOpening": {
+                "id": "Aalborg-Office:HVAC:Actuator_Position-Heating-Coil-Motorvalve",
+                "type": "Device"
+            },
+            "HERotSignal": {
+                "id": "Aalborg-Office:HVAC:Sensor_Rotation-Speed",
+                "type": "Device"
+            },
+            "TempExh": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Temperature",
+                "type": "Device"
+            },
+            "TempExt": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "TempIntake": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "TempSup": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Air-Supply",
+                "type": "Device"
+            },
+            "TempSupSP": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Temperature-Air-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-12T14:30:09Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "resample_time": "5 minutes",
+            "startup_time": "10 minutes",
+            "step_size_degrees": "2"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC130-V01",
+        "taskValue": 0,
+        "name": "Heat Exchanger Efficiency"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SupPresDevAvg",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment",
+        "periodicity": "paused",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:Weather-Station:Sensor_Temperature",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanOnOff": {
+                "id": "Aalborg-Office:HVAC:Actuator_Switch-Supply-Fan-OnOff",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-06-20T10:02:29Z",
+        "dateObserved": "1970-01-01T00:00:00Z",
+        "arguments": {
+            "FD_ID": "SupplyPressureDeviationAverageHistoricalInUse",
+            "HDBscan_grid_max_points": 100000,
+            "HDBscan_grid_min_cluster_points": 20,
+            "HDBscan_min_points": 1000,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 90
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Thermal-Comfort-Report:Monthly",
+        "type": "Task",
+        "description": "Monthly thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "reports": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-01T00:00:00Z",
+        "validTo": "2024-09-01T00:00:00Z",
+        "dateCreated": "2024-06-21T09:12:48Z",
+        "dateObserved": "2024-08-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:07:46Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 0.98,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.02
+        },
+        "name": "Monthly fanger thermal comfort report for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Office:Floor-3:Room-1.257:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-3:Room-1.257:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:39:58Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:00:58Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 3, Room 1.257"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Thermal-Comfort-Report:Daily",
+        "type": "Task",
+        "description": "Daily thermal comfort report based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "reports": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-08-10T00:00:00Z",
+        "validTo": "2024-08-11T00:00:00Z",
+        "dateCreated": "2024-06-21T09:13:01Z",
+        "dateObserved": "2024-08-10T00:00:00Z",
+        "dateModified": "2024-08-11T00:00:12Z",
+        "taskId": "A11-A:FCR-V01",
+        "taskValue": {
+            "above_cat_3": 0.0,
+            "below_cat_3": 0.0,
+            "cat_2": 1.0,
+            "low_cat_3": 0.0,
+            "upper_cat_3": 0.0
+        },
+        "name": "Daily fanger thermal comfort report for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.365:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-4:Room-1.365:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:38:50Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:01:06Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 4, Room 1.365"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.361:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-4:Room-1.361:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:39:15Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:00:54Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 4, Room 1.361"
+    },
+    {
+        "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Monthly",
+        "type": "Task",
+        "description": "KPI definition for Energy Use Intensity (EUI). Takes as input a timeseries of killowatt per hour measurements and the area of the physical space in squared meters and outputs the EUI.",
+        "category": "KPI-Instance",
+        "periodicity": "@monthly",
+        "requires": {
+            "SpacialContext": {
+                "id": "Aalborg-Office",
+                "type": "Building",
+                "area": true
+            },
+            "TotalLoad": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Accumulated-Load",
+                "unit": "KWH"
+            }
+        },
+        "validFrom": "2024-08-01T00:00:00Z",
+        "validTo": "2024-09-01T00:00:00Z",
+        "dateCreated": "2023-11-15T23:13:40Z",
+        "dateObserved": "2024-08-01T00:00:00Z",
+        "dateModified": "2024-09-24T00:08:26Z",
+        "taskId": "A01-K:00001-V01",
+        "taskValue": 7.531888888888889,
+        "name": "Hourly Energy Use Intensity (EUI) for Aalborg Office building"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance_Electricity-Use",
+        "type": "Task",
+        "description": "KPI definition for the electricity use in the AHU, takes as input a timeseries of electricity use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC_KOMF01:AHU_HT00-1_EM01:Sensor_Total-Load",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2024-07-12T17:48:28Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:EP100-V01",
+        "taskValue": 0.0,
+        "name": "Electricity Use"
+    },
+    {
+        "id": "Aalborg-Office:Floor-2:Room-1.132:Assessment-Instance_Fanger-Comfort-Classification",
+        "type": "Task",
+        "description": "Thermal comfort category based on Fanger method.",
+        "category": "Assessment-Instance",
+        "periodicity": "*/15 * * * *",
+        "requires": {
+            "occupation_hours": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Sensor_Occupancy",
+                "type": "Device"
+            },
+            "temp_dev": {
+                "id": "Aalborg-Office:Floor-2:Room-1.132:Sensor_Temperature",
+                "type": "Device"
+            }
+        },
+        "validFrom": "2024-08-12T13:15:00Z",
+        "validTo": "2024-08-12T13:30:00Z",
+        "dateCreated": "2024-06-21T09:10:14Z",
+        "dateObserved": "2024-08-12T13:15:00Z",
+        "arguments": {
+            "above_cat_3": 26,
+            "below_cat_3": 19,
+            "cat_2": 24,
+            "low_cat_3": 20,
+            "upper_cat_3": 25
+        },
+        "dateModified": "2024-08-12T13:35:25Z",
+        "taskId": "A11-A:FCC-V01",
+        "taskValue": "cat_2",
+        "name": "Fanger thermal comfort category result for Floor 2 Room 1.132"
+    },
+    {
+        "id": "Aalborg-Office:Floor-4:Room-1.367:Assessment-Instance_IAQ-CO2-Report:Hourly",
+        "type": "Task",
+        "description": "Hourly C02 concentration report.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "Classification": {
+                "id": "Aalborg-Office:Floor-4:Room-1.367:Assessment-Instance_IAQ-CO2-Classification",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2024-08-05T19:39:35Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:01:01Z",
+        "taskId": "A12-S-G3-P-V01",
+        "taskValue": {
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+        },
+        "name": "Hourly IAQ CO2 concentration report for Floor 4, Room 1.367"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecHeatUse-2",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "ExtTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-External",
+                "type": "Device"
+            },
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-07T23:50:22Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificHeatingEnergyUseHistorical2",
+            "HDBscan_grid_max_points": 10000,
+            "HDBscan_grid_min_cluster_points": 5,
+            "HDBscan_min_points": 500,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 30
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Daily",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every day it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@daily",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Daily",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-23T00:00:00Z",
+        "validTo": "2024-09-24T00:00:00Z",
+        "dateCreated": "2023-11-16T13:29:42Z",
+        "dateObserved": "2024-09-23T00:00:00Z",
+        "dateModified": "2024-09-24T00:10:39Z",
+        "taskId": "A01",
+        "taskValue": {
+            "Max": 0.9727,
+            "Med": 0.3097,
+            "Min": 0,
+            "Q1": 0.1888,
+            "Q3": 0.5024,
+            "result": 0.27516666666666667
+        },
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Office:Assessment-Instance:A01_Whole-Building-Energy:Hourly",
+        "type": "Task",
+        "description": "Takes as input a EUI and the building category. Every hour it compares the EUI with the reference values from buildings of the same category.",
+        "category": "Assessment-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "building_category": {
+                "id": "Aalborg-Office",
+                "type": "Building"
+            },
+            "energy_use_intensity": {
+                "id": "Aalborg-Office:KPI-Instance:Energy-Use-Intensity:Hourly",
+                "type": "Task"
+            }
+        },
+        "validFrom": "2024-09-24T18:00:00Z",
+        "validTo": "2024-09-24T19:00:00Z",
+        "dateCreated": "2023-11-11T23:15:36Z",
+        "dateObserved": "2024-09-24T18:00:00Z",
+        "dateModified": "2024-09-24T19:08:17Z",
+        "taskId": "A01",
+        "taskValue": {
+            "Max": 0.0472,
+            "Med": 0.0155,
+            "Min": 0,
+            "Q1": 0.0097,
+            "Q3": 0.0247,
+            "result": 0.007611111111111111
+        },
+        "name": "Whole Building Energy assessment."
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:Assessment-Instance:A28-S2-G-F-V05:SpecHeatUse-1",
+        "type": "Task",
+        "description": "Assessments: Determines if any faults are present in the given system",
+        "category": "Assessment-Instance",
+        "periodicity": "*/5 * * * *",
+        "requires": {
+            "AfterHETemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-HE",
+                "type": "Device"
+            },
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtractionAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Extraction",
+                "type": "Device"
+            },
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "IntakeAirTemp": {
+                "id": "Aalborg-Office:HVAC:Sensor_Temperature-Intake",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-11-07T23:50:06Z",
+        "dateObserved": "2024-09-27T13:55:00Z",
+        "arguments": {
+            "FD_ID": "SpecificHeatingEnergyUseHistorical1",
+            "HDBscan_grid_max_points": 10000,
+            "HDBscan_grid_min_cluster_points": 5,
+            "HDBscan_min_points": 500,
+            "HDBscan_update": 168,
+            "IQR_maximum_points": 200,
+            "IQR_minimum_points": 50,
+            "IQR_multiplier": 1.5,
+            "data_time_resolution": 5,
+            "historical_max_time": 30
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-S2-G-F-V05",
+        "taskValue": 0,
+        "name": "AHU Performance assessments"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Max-Supply-Temperature-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the max supply temperature deviation in the AHU, takes as input a timeseries of supply temperature and supply temperature setpoints and outputs the max supply temperature deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-07T09:27:45Z",
+        "dateObserved": "2024-07-24T16:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-07-24T17:00:25Z",
+        "taskId": "A28-K:SC000-V04",
+        "taskValue": 0,
+        "name": "Max Supply Temperature Deviation"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Specific-Heating-Energy-Use:Hourly",
+        "type": "Task",
+        "description": "KPI definition for the specific heating energy use for the AHU, takes as input a timeseries of supply air flow, extracion air flow, and electricity use to heat and outputs the specific electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "HeatEnergyUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-12T18:08:51Z",
+        "dateObserved": "2024-09-24T18:59:59Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-09-27T09:57:15Z",
+        "taskId": "A28-K:SC500-V02",
+        "taskValue": 0,
+        "name": "Specific Heating Energy Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Heating-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the heating energy use in the AHU, takes as input a timeseries of heating energy use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "HeatUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-05T14:00:44Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:EP200-V01",
+        "taskValue": 0.0,
+        "name": "Heating Energy Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Max-Supply-Pressure-Deviation",
+        "type": "Task",
+        "description": "KPI definition for the maximum supply pressure deviation in the AHU, takes as input a timeseries of supply pressure and supply pressure setpoints and outputs the maximum supply pressure deviation over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "SupPres": {
+                "id": "Aalborg-Office:HVAC:Sensor_Air-Pressure-Supply",
+                "type": "Device"
+            },
+            "SupPresSetp": {
+                "id": "Aalborg-Office:HVAC:Actuator_Setpoint-Air-Pressure-Supply",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-07T09:12:48Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC000-V02",
+        "taskValue": 54.4500045776,
+        "name": "Max Supply Pressure Deviation"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Cooling-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the cooling peak power in the AHU, takes as input a timeseries of electrical energy use for heating device and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-08-31T17:50:05Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:BP100-V03",
+        "taskValue": 40339100,
+        "name": "Cooling Peak Power"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Fan-Electricity-use",
+        "type": "Task",
+        "description": "KPI definition for the electricity use for the fan, takes as input a timeseries of electricity use and outputs the sum electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Exhaust-Fan-Power",
+                "unit": "KWT"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-12T19:30:22Z",
+        "dateObserved": "2024-09-24T19:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-09-27T09:39:24Z",
+        "taskId": "A28-K:EP100-V02",
+        "taskValue": 0.0,
+        "name": "Fan Electricity use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Specific-Electricity-Use",
+        "type": "Task",
+        "description": "KPI definition for the specific electricity use for the AHU, takes as input a timeseries of supply air flow, extracion air flow, and electricity use and outputs the specific electricity use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:Sensor_Accumulated-Load",
+                "type": "Device"
+            },
+            "ExtFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-07T09:50:35Z",
+        "dateObserved": "2024-09-24T14:59:59Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC500-V01",
+        "taskValue": 14863.022581426987,
+        "name": "Specific Electricity Use"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Electrical-Peak-Power",
+        "type": "Task",
+        "description": "KPI definition for the electrical peak power in the AHU, takes as input a timeseries of electrical energy use and outputs the electrical peak power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:Sensor_Total-Load",
+                "type": "Device",
+                "category": "Sensor",
+                "measuresProperty": "Total-Load",
+                "unit": "KWT"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-01T21:43:04Z",
+        "dateObserved": "2024-07-12T09:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:BP100-V01",
+        "taskValue": 131.766373,
+        "name": "Electrical Peak Power"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Specific-Fan-Power",
+        "type": "Task",
+        "description": "KPI definition for the specific fan power in the AHU, takes as input a timeseries of fan power and fan flow outputs the sum specific fan power over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ExtFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Flow",
+                "type": "Device"
+            },
+            "ExtFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Exhaust-Fan-Power",
+                "type": "Device"
+            },
+            "SupFanFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            },
+            "SupFanPower": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Power",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-12T19:40:34Z",
+        "dateObserved": "2024-09-29T12:00:00Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "2024-09-29T13:06:52Z",
+        "taskId": "A28-K:SC500-V04",
+        "taskValue": 0,
+        "name": "Specific Fan Power"
+    },
+    {
+        "id": "Aalborg-Office:HVAC:AHU_KOMF01:KPI-Instance:Water-Based-Heating-Energy-Use",
+        "type": "Task",
+        "description": "KPI definition for the specific heating energy use in the AHU, takes as input a timeseries of heating energy use and the flow rate over the heating coil and outputs the specific heating energy use over the entire timeseries as a float",
+        "category": "KPI-Instance",
+        "periodicity": "@hourly",
+        "requires": {
+            "ElecUse": {
+                "id": "Aalborg-Office:HVAC:Sensor_Energy-Consumed-Heating-Coil",
+                "type": "Device"
+            },
+            "SupFlow": {
+                "id": "Aalborg-Office:HVAC:Sensor_Supply-Fan-Flow",
+                "type": "Device"
+            }
+        },
+        "validFrom": "1970-01-01T00:00:00Z",
+        "validTo": "1970-01-01T00:00:00Z",
+        "dateCreated": "2023-09-25T21:57:59Z",
+        "dateObserved": "2024-09-24T14:59:59Z",
+        "arguments": {
+            "scope": "hourly"
+        },
+        "dateModified": "1970-01-01T00:00:00Z",
+        "taskId": "A28-K:SC500-V05",
+        "taskValue": 0.0,
+        "name": "Water Based Heating Energy Use"
+    }
+]

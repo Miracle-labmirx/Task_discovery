@@ -1,0 +1,80 @@
+[
+    {
+        "id": "California-Berkeley-Office:North-Wing",
+        "type": "Zone",
+        "isZoneOf": "California-Berkeley-Office",
+        "contains": [
+            "California-Berkeley-Office:North-Wing:Sensor-HVAC-Load",
+            "California-Berkeley-Office:North-Wing:Sensor-Misc-Load",
+            "California-Berkeley-Office:North-Wing:Sensor-Total-Load",
+            "California-Berkeley-Office:South-Wing:Sensor-Lighting-Load"
+        ],
+        "hasSpace": [
+            "California-Berkeley-Office:Floor-2:Room-BL-016",
+            "California-Berkeley-Office:Floor-2:Room-BL-017",
+            "California-Berkeley-Office:Floor-2:Room-BL-018",
+            "California-Berkeley-Office:Floor-2:Room-BL-021",
+            "California-Berkeley-Office:Floor-2:Room-BL-022",
+            "California-Berkeley-Office:Floor-2:Room-BL-023",
+            "California-Berkeley-Office:Floor-2:Room-BL-024",
+            "California-Berkeley-Office:Floor-2:Room-BL-025",
+            "California-Berkeley-Office:Floor-2:Room-BL-026",
+            "California-Berkeley-Office:Floor-2:Room-BL-045",
+            "California-Berkeley-Office:Floor-3:Room-BL-046",
+            "California-Berkeley-Office:Floor-3:Room-BL-047",
+            "California-Berkeley-Office:Floor-3:Room-BL-048",
+            "California-Berkeley-Office:Floor-3:Room-BL-051",
+            "California-Berkeley-Office:Floor-3:Room-BL-052",
+            "California-Berkeley-Office:Floor-3:Room-BL-053",
+            "California-Berkeley-Office:Floor-3:Room-BL-054",
+            "California-Berkeley-Office:Floor-3:Room-BL-055",
+            "California-Berkeley-Office:Floor-3:Room-BL-056",
+            "California-Berkeley-Office:Floor-3:Room-BL-061"
+        ],
+        "name": "North-Wing"
+    },
+    {
+        "id": "California-Berkeley-Office:South-Wing",
+        "type": "Zone",
+        "isZoneOf": "California-Berkeley-Office",
+        "contains": [
+            "California-Berkeley-Office:South-Wing:Sensor-HVAC-Load",
+            "California-Berkeley-Office:South-Wing:Sensor-Misc-Load",
+            "California-Berkeley-Office:South-Wing:Sensor-Total-Load"
+        ],
+        "hasSpace": [
+            "California-Berkeley-Office:Floor-2:Room-BL-019",
+            "California-Berkeley-Office:Floor-2:Room-BL-027",
+            "California-Berkeley-Office:Floor-2:Room-BL-028",
+            "California-Berkeley-Office:Floor-2:Room-BL-030",
+            "California-Berkeley-Office:Floor-2:Room-BL-032",
+            "California-Berkeley-Office:Floor-2:Room-BL-033",
+            "California-Berkeley-Office:Floor-2:Room-BL-035",
+            "California-Berkeley-Office:Floor-2:Room-BL-036",
+            "California-Berkeley-Office:Floor-2:Room-BL-037",
+            "California-Berkeley-Office:Floor-2:Room-BL-038",
+            "California-Berkeley-Office:Floor-2:Room-BL-039",
+            "California-Berkeley-Office:Floor-2:Room-BL-040",
+            "California-Berkeley-Office:Floor-2:Room-BL-041",
+            "California-Berkeley-Office:Floor-2:Room-BL-042",
+            "California-Berkeley-Office:Floor-2:Room-BL-043",
+            "California-Berkeley-Office:Floor-2:Room-BL-044",
+            "California-Berkeley-Office:Floor-3:Room-BL-049",
+            "California-Berkeley-Office:Floor-3:Room-BL-057",
+            "California-Berkeley-Office:Floor-3:Room-BL-058",
+            "California-Berkeley-Office:Floor-3:Room-BL-059",
+            "California-Berkeley-Office:Floor-3:Room-BL-062",
+            "California-Berkeley-Office:Floor-3:Room-BL-063",
+            "California-Berkeley-Office:Floor-3:Room-BL-064",
+            "California-Berkeley-Office:Floor-3:Room-BL-065",
+            "California-Berkeley-Office:Floor-3:Room-BL-066",
+            "California-Berkeley-Office:Floor-3:Room-BL-067",
+            "California-Berkeley-Office:Floor-3:Room-BL-068",
+            "California-Berkeley-Office:Floor-3:Room-BL-069",
+            "California-Berkeley-Office:Floor-3:Room-BL-070",
+            "California-Berkeley-Office:Floor-3:Room-BL-071",
+            "California-Berkeley-Office:Floor-3:Room-BL-072"
+        ],
+        "name": "South-Wing"
+    }
+]
